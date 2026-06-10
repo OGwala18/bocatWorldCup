@@ -1,0 +1,530 @@
+[
+  {
+    "name": "Mexico",
+    "group": "A",
+    "owner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "South Africa",
+    "group": "A",
+    "owner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Korea Republic",
+    "group": "A",
+    "owner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Czechia",
+    "group": "A",
+    "owner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Canada",
+    "group": "B",
+    "owner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Bosnia & Herzegovina",
+    "group": "B",
+    "owner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Qatar",
+    "group": "B",
+    "owner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Switzerland",
+    "group": "B",
+    "owner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Brazil",
+    "group": "C",
+    "owner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Morocco",
+    "group": "C",
+    "owner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Haiti",
+    "group": "C",
+    "owner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Scotland",
+    "group": "C",
+    "owner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "United States",
+    "group": "D",
+    "owner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Paraguay",
+    "group": "D",
+    "owner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Australia",
+    "group": "D",
+    "owner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Türkiye",
+    "group": "D",
+    "owner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Germany",
+    "group": "E",
+    "owner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Curaçao",
+    "group": "E",
+    "owner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Ivory Coast",
+    "group": "E",
+    "owner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Ecuador",
+    "group": "E",
+    "owner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Netherlands",
+    "group": "F",
+    "owner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Japan",
+    "group": "F",
+    "owner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Sweden",
+    "group": "F",
+    "owner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Tunisia",
+    "group": "F",
+    "owner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Belgium",
+    "group": "G",
+    "owner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Egypt",
+    "group": "G",
+    "owner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Iran",
+    "group": "G",
+    "owner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "New Zealand",
+    "group": "G",
+    "owner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Spain",
+    "group": "H",
+    "owner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Cape Verde",
+    "group": "H",
+    "owner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Saudi Arabia",
+    "group": "H",
+    "owner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Uruguay",
+    "group": "H",
+    "owner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "France",
+    "group": "I",
+    "owner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Senegal",
+    "group": "I",
+    "owner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Iraq",
+    "group": "I",
+    "owner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Norway",
+    "group": "I",
+    "owner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Argentina",
+    "group": "J",
+    "owner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Algeria",
+    "group": "J",
+    "owner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Austria",
+    "group": "J",
+    "owner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Jordan",
+    "group": "J",
+    "owner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Portugal",
+    "group": "K",
+    "owner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Congo DR",
+    "group": "K",
+    "owner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Uzbekistan",
+    "group": "K",
+    "owner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Colombia",
+    "group": "K",
+    "owner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "England",
+    "group": "L",
+    "owner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Croatia",
+    "group": "L",
+    "owner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Ghana",
+    "group": "L",
+    "owner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "stageReached": "group",
+    "points": 0
+  },
+  {
+    "name": "Panama",
+    "group": "L",
+    "owner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "stageReached": "group",
+    "points": 0
+  }
+]

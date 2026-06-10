@@ -1,0 +1,29 @@
+{
+  "timezone": "Africa/Johannesburg",
+  "groupStageCompleteAtSast": "2026-06-28T06:00:00+02:00",
+  "pointsByStage": {
+    "group": 0,
+    "round_of_32": 1,
+    "round_of_16": 2,
+    "quarterfinal": 3,
+    "semifinal": 4,
+    "final": 5
+  },
+  "notes": [
+    "Round of 32 qualification awards 1 point.",
+    "Round of 16 qualification awards 2 points.",
+    "Quarterfinal qualification awards 3 points.",
+    "Semifinal qualification awards 4 points.",
+    "Final qualification awards 5 points."
+  ],
+  "sources": [
+    {
+      "label": "FIFA Scores & Fixtures",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures"
+    },
+    {
+      "label": "FOX Sports 2026 World Cup schedule",
+      "url": "https://www.foxsports.com/stories/soccer/2026-world-cup-schedule-all-games-dates-matchups-how-watch"
+    }
+  ]
+}

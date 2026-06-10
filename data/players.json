@@ -1,0 +1,146 @@
+[
+  {
+    "id": "onke",
+    "name": "Onke",
+    "color": "#0EA5E9",
+    "teams": [
+      "Germany",
+      "Korea Republic",
+      "Senegal",
+      "South Africa"
+    ],
+    "topTeam": "Germany"
+  },
+  {
+    "id": "jarvis",
+    "name": "Jarvis",
+    "color": "#F97316",
+    "teams": [
+      "England",
+      "Austria",
+      "Norway",
+      "Mexico"
+    ],
+    "topTeam": "England"
+  },
+  {
+    "id": "ndalo",
+    "name": "Ndalo",
+    "color": "#8B5CF6",
+    "teams": [
+      "Netherlands",
+      "Panama",
+      "Japan",
+      "Cape Verde"
+    ],
+    "topTeam": "Netherlands"
+  },
+  {
+    "id": "asiphe",
+    "name": "Asiphe",
+    "color": "#22C55E",
+    "teams": [
+      "France",
+      "New Zealand",
+      "Iran",
+      "Jordan"
+    ],
+    "topTeam": "France"
+  },
+  {
+    "id": "sandile",
+    "name": "Sandile",
+    "color": "#EF4444",
+    "teams": [
+      "Portugal",
+      "Sweden",
+      "Ghana",
+      "Congo DR"
+    ],
+    "topTeam": "Portugal"
+  },
+  {
+    "id": "mudi",
+    "name": "Mudi",
+    "color": "#14B8A6",
+    "teams": [
+      "Argentina",
+      "Ivory Coast",
+      "Australia",
+      "Qatar"
+    ],
+    "topTeam": "Argentina"
+  },
+  {
+    "id": "tadhg",
+    "name": "Tadhg",
+    "color": "#EAB308",
+    "teams": [
+      "Spain",
+      "Ecuador",
+      "Switzerland",
+      "Tunisia"
+    ],
+    "topTeam": "Spain"
+  },
+  {
+    "id": "ayanda",
+    "name": "Ayanda",
+    "color": "#EC4899",
+    "teams": [
+      "Brazil",
+      "Bosnia & Herzegovina",
+      "Iraq",
+      "United States"
+    ],
+    "topTeam": "Brazil"
+  },
+  {
+    "id": "mandla",
+    "name": "Mandla",
+    "color": "#6366F1",
+    "teams": [
+      "Belgium",
+      "Türkiye",
+      "Czechia",
+      "Scotland"
+    ],
+    "topTeam": "Belgium"
+  },
+  {
+    "id": "tmak",
+    "name": "Tmak",
+    "color": "#84CC16",
+    "teams": [
+      "Morocco",
+      "Saudi Arabia",
+      "Algeria",
+      "Paraguay"
+    ],
+    "topTeam": "Morocco"
+  },
+  {
+    "id": "magz",
+    "name": "Magz",
+    "color": "#06B6D4",
+    "teams": [
+      "Croatia",
+      "Haiti",
+      "Uruguay",
+      "Curaçao"
+    ],
+    "topTeam": "Croatia"
+  },
+  {
+    "id": "inathi",
+    "name": "Inathi",
+    "color": "#F43F5E",
+    "teams": [
+      "Colombia",
+      "Canada",
+      "Uzbekistan",
+      "Egypt"
+    ],
+    "topTeam": "Colombia"
+  }
+]

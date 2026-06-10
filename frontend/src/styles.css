@@ -1,0 +1,530 @@
+:root {
+  color: #111827;
+  background: #eef2f7;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+main {
+  min-height: 100vh;
+  padding: 18px;
+}
+
+.hero {
+  min-height: 260px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+}
+
+.hero h1 {
+  margin: 6px 0 8px;
+  font-size: 46px;
+  line-height: 1;
+}
+
+.hero p {
+  max-width: 680px;
+  margin: 0;
+  color: #e5eefb;
+  font-size: 16px;
+}
+
+.eyebrow,
+.label {
+  color: #facc15;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-actions button,
+.segmented button {
+  border: 0;
+  border-radius: 7px;
+  background: #facc15;
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 9px 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.hero-actions button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.notice {
+  margin: 14px 0;
+  border-left: 4px solid #f97316;
+  background: #fff7ed;
+  padding: 12px 14px;
+  border-radius: 6px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.summary-grid > div,
+.panel {
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.summary-grid > div {
+  min-height: 78px;
+  padding: 14px;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+}
+
+.summary-grid strong {
+  font-size: 18px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.8fr) minmax(520px, 1.4fr);
+  gap: 16px;
+}
+
+.panel {
+  padding: 14px;
+  min-width: 0;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #1f3556;
+}
+
+.panel-title h2,
+.group-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.leaderboard-list,
+.fixture-list {
+  display: grid;
+  gap: 8px;
+  max-height: 610px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+.leader-row {
+  display: grid;
+  grid-template-columns: 28px 42px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  border: 1px solid #e5eaf2;
+  border-radius: 7px;
+  padding: 8px;
+  background: #fbfdff;
+}
+
+.rank {
+  color: #64748b;
+  font-weight: 800;
+  text-align: center;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+}
+
+.leader-row strong,
+.fixture-main strong {
+  display: block;
+}
+
+.leader-row small,
+.fixture-main small,
+.muted {
+  color: #64748b;
+}
+
+.fixture-main small {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.leader-row b {
+  justify-self: end;
+  font-size: 22px;
+  color: #1f3556;
+}
+
+.segmented {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.segmented button {
+  background: #e2e8f0;
+  min-height: 34px;
+}
+
+.segmented button.active {
+  background: #1f3556;
+  color: #facc15;
+}
+
+.fixture-row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 92px;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #e5eaf2;
+  border-radius: 7px;
+  padding: 9px;
+  background: #fbfdff;
+}
+
+.fixture-row time {
+  display: grid;
+  color: #1f3556;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.fixture-row time span {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.score {
+  color: #0f766e;
+  white-space: nowrap;
+}
+
+.status-pill {
+  border-radius: 999px;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.status-pill.live {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-pill.final {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.fixture-stage {
+  justify-self: end;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.assignments,
+.groups {
+  margin-top: 16px;
+}
+
+.assignment-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.player-card {
+  border: 2px solid;
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  gap: 7px;
+  padding: 0 8px 9px;
+  background: #ffffff;
+}
+
+.player-card header {
+  margin: 0 -8px;
+  min-height: 36px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+}
+
+.team-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  border-radius: 999px;
+  padding: 6px 9px;
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.group-card {
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fbfdff;
+}
+
+.group-card h3 {
+  color: #1f3556;
+  margin-bottom: 8px;
+}
+
+.group-team {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 86px 42px;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  border-top: 1px solid #eef2f7;
+}
+
+.group-team span:nth-child(2) {
+  color: #475569;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.group-team b {
+  justify-self: end;
+  color: #1f3556;
+}
+
+.loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+@media (max-width: 1180px) {
+  .summary-grid,
+  .dashboard-grid,
+  .groups-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .assignment-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  main {
+    padding: 8px;
+  }
+
+  .hero {
+    min-height: 220px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-actions,
+  .hero-actions button {
+    width: 100%;
+  }
+
+  .hero-actions button {
+    justify-content: center;
+    min-height: 44px;
+    padding: 11px 13px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 10px 0;
+  }
+
+  .summary-grid > div {
+    min-height: 70px;
+    padding: 10px;
+  }
+
+  .summary-grid strong {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .dashboard-grid,
+  .groups-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fixtures {
+    order: -1;
+  }
+
+  .panel {
+    padding: 10px;
+  }
+
+  .panel-title {
+    margin-bottom: 9px;
+  }
+
+  .panel-title h2,
+  .group-card h3 {
+    font-size: 16px;
+  }
+
+  .leaderboard-list,
+  .fixture-list {
+    max-height: none;
+    padding-right: 0;
+  }
+
+  .leader-row {
+    grid-template-columns: 24px 38px minmax(0, 1fr) 34px;
+    min-height: 54px;
+  }
+
+  .leader-row small {
+    display: none;
+  }
+
+  .avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .fixture-row {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 10px;
+  }
+
+  .fixture-row time {
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .fixture-main strong {
+    font-size: 15px;
+  }
+
+  .fixture-stage {
+    justify-self: start;
+  }
+
+  .segmented button {
+    flex: 1 1 0;
+    justify-content: center;
+    min-height: 42px;
+    padding: 8px 10px;
+  }
+
+  .assignment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .player-card {
+    padding: 0 6px 7px;
+    gap: 6px;
+  }
+
+  .player-card header {
+    margin: 0 -6px;
+    min-height: 34px;
+  }
+
+  .team-pill {
+    min-height: 34px;
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+
+  .group-team {
+    grid-template-columns: minmax(0, 1fr) 72px 38px;
+    min-height: 42px;
+  }
+}

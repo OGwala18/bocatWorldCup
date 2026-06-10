@@ -1,0 +1,1946 @@
+[
+  {
+    "id": "m001",
+    "matchNumber": 1,
+    "stage": "Group Stage",
+    "group": "A",
+    "homeTeam": "South Africa",
+    "awayTeam": "Mexico",
+    "homeOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "awayOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "playerMatchup": "Onke vs Jarvis",
+    "venue": "Mexico City Stadium",
+    "kickoffEt": "2026-06-11T15:00:00-04:00",
+    "kickoffSast": "2026-06-11T21:00:00+02:00",
+    "dateSast": "Thursday 11/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m002",
+    "matchNumber": 2,
+    "stage": "Group Stage",
+    "group": "A",
+    "homeTeam": "Korea Republic",
+    "awayTeam": "Czechia",
+    "homeOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "awayOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "playerMatchup": "Onke vs Mandla",
+    "venue": "Guadalajara Stadium",
+    "kickoffEt": "2026-06-11T22:00:00-04:00",
+    "kickoffSast": "2026-06-12T04:00:00+02:00",
+    "dateSast": "Friday 12/06/2026",
+    "timeSast": "04:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m003",
+    "matchNumber": 3,
+    "stage": "Group Stage",
+    "group": "B",
+    "homeTeam": "Canada",
+    "awayTeam": "Bosnia & Herzegovina",
+    "homeOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "awayOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "playerMatchup": "Inathi vs Ayanda",
+    "venue": "Toronto Stadium",
+    "kickoffEt": "2026-06-12T15:00:00-04:00",
+    "kickoffSast": "2026-06-12T21:00:00+02:00",
+    "dateSast": "Friday 12/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m004",
+    "matchNumber": 4,
+    "stage": "Group Stage",
+    "group": "D",
+    "homeTeam": "United States",
+    "awayTeam": "Paraguay",
+    "homeOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "awayOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "playerMatchup": "Ayanda vs Tmak",
+    "venue": "Los Angeles Stadium",
+    "kickoffEt": "2026-06-12T21:00:00-04:00",
+    "kickoffSast": "2026-06-13T03:00:00+02:00",
+    "dateSast": "Saturday 13/06/2026",
+    "timeSast": "03:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m005",
+    "matchNumber": 5,
+    "stage": "Group Stage",
+    "group": "B",
+    "homeTeam": "Qatar",
+    "awayTeam": "Switzerland",
+    "homeOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "awayOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "playerMatchup": "Mudi vs Tadhg",
+    "venue": "San Francisco Bay Stadium",
+    "kickoffEt": "2026-06-13T15:00:00-04:00",
+    "kickoffSast": "2026-06-13T21:00:00+02:00",
+    "dateSast": "Saturday 13/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m006",
+    "matchNumber": 6,
+    "stage": "Group Stage",
+    "group": "C",
+    "homeTeam": "Brazil",
+    "awayTeam": "Morocco",
+    "homeOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "awayOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "playerMatchup": "Ayanda vs Tmak",
+    "venue": "New York New Jersey Stadium",
+    "kickoffEt": "2026-06-13T18:00:00-04:00",
+    "kickoffSast": "2026-06-14T00:00:00+02:00",
+    "dateSast": "Sunday 14/06/2026",
+    "timeSast": "00:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m007",
+    "matchNumber": 7,
+    "stage": "Group Stage",
+    "group": "C",
+    "homeTeam": "Haiti",
+    "awayTeam": "Scotland",
+    "homeOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "awayOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "playerMatchup": "Magz vs Mandla",
+    "venue": "Boston Stadium",
+    "kickoffEt": "2026-06-13T21:00:00-04:00",
+    "kickoffSast": "2026-06-14T03:00:00+02:00",
+    "dateSast": "Sunday 14/06/2026",
+    "timeSast": "03:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m008",
+    "matchNumber": 8,
+    "stage": "Group Stage",
+    "group": "D",
+    "homeTeam": "Australia",
+    "awayTeam": "Türkiye",
+    "homeOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "awayOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "playerMatchup": "Mudi vs Mandla",
+    "venue": "BC Place Vancouver",
+    "kickoffEt": "2026-06-14T00:00:00-04:00",
+    "kickoffSast": "2026-06-14T06:00:00+02:00",
+    "dateSast": "Sunday 14/06/2026",
+    "timeSast": "06:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m009",
+    "matchNumber": 9,
+    "stage": "Group Stage",
+    "group": "E",
+    "homeTeam": "Germany",
+    "awayTeam": "Curaçao",
+    "homeOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "awayOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "playerMatchup": "Onke vs Magz",
+    "venue": "Houston Stadium",
+    "kickoffEt": "2026-06-14T13:00:00-04:00",
+    "kickoffSast": "2026-06-14T19:00:00+02:00",
+    "dateSast": "Sunday 14/06/2026",
+    "timeSast": "19:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m010",
+    "matchNumber": 10,
+    "stage": "Group Stage",
+    "group": "F",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Japan",
+    "homeOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "awayOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "playerMatchup": "Ndalo vs Ndalo",
+    "venue": "Dallas Stadium",
+    "kickoffEt": "2026-06-14T16:00:00-04:00",
+    "kickoffSast": "2026-06-14T22:00:00+02:00",
+    "dateSast": "Sunday 14/06/2026",
+    "timeSast": "22:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m011",
+    "matchNumber": 11,
+    "stage": "Group Stage",
+    "group": "E",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Ecuador",
+    "homeOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "awayOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "playerMatchup": "Mudi vs Tadhg",
+    "venue": "Philadelphia Stadium",
+    "kickoffEt": "2026-06-14T19:00:00-04:00",
+    "kickoffSast": "2026-06-15T01:00:00+02:00",
+    "dateSast": "Monday 15/06/2026",
+    "timeSast": "01:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m012",
+    "matchNumber": 12,
+    "stage": "Group Stage",
+    "group": "F",
+    "homeTeam": "Tunisia",
+    "awayTeam": "Sweden",
+    "homeOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "awayOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "playerMatchup": "Tadhg vs Sandile",
+    "venue": "Monterrey Stadium",
+    "kickoffEt": "2026-06-14T22:00:00-04:00",
+    "kickoffSast": "2026-06-15T04:00:00+02:00",
+    "dateSast": "Monday 15/06/2026",
+    "timeSast": "04:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m013",
+    "matchNumber": 13,
+    "stage": "Group Stage",
+    "group": "H",
+    "homeTeam": "Spain",
+    "awayTeam": "Cape Verde",
+    "homeOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "awayOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "playerMatchup": "Tadhg vs Ndalo",
+    "venue": "Atlanta Stadium",
+    "kickoffEt": "2026-06-15T12:00:00-04:00",
+    "kickoffSast": "2026-06-15T18:00:00+02:00",
+    "dateSast": "Monday 15/06/2026",
+    "timeSast": "18:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m014",
+    "matchNumber": 14,
+    "stage": "Group Stage",
+    "group": "G",
+    "homeTeam": "Belgium",
+    "awayTeam": "Egypt",
+    "homeOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "awayOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "playerMatchup": "Mandla vs Inathi",
+    "venue": "Seattle Stadium",
+    "kickoffEt": "2026-06-15T15:00:00-04:00",
+    "kickoffSast": "2026-06-15T21:00:00+02:00",
+    "dateSast": "Monday 15/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m015",
+    "matchNumber": 15,
+    "stage": "Group Stage",
+    "group": "H",
+    "homeTeam": "Saudi Arabia",
+    "awayTeam": "Uruguay",
+    "homeOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "awayOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "playerMatchup": "Tmak vs Magz",
+    "venue": "Miami Stadium",
+    "kickoffEt": "2026-06-15T18:00:00-04:00",
+    "kickoffSast": "2026-06-16T00:00:00+02:00",
+    "dateSast": "Tuesday 16/06/2026",
+    "timeSast": "00:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m016",
+    "matchNumber": 16,
+    "stage": "Group Stage",
+    "group": "G",
+    "homeTeam": "Iran",
+    "awayTeam": "New Zealand",
+    "homeOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "awayOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "playerMatchup": "Asiphe vs Asiphe",
+    "venue": "Los Angeles Stadium",
+    "kickoffEt": "2026-06-15T21:00:00-04:00",
+    "kickoffSast": "2026-06-16T03:00:00+02:00",
+    "dateSast": "Tuesday 16/06/2026",
+    "timeSast": "03:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m017",
+    "matchNumber": 17,
+    "stage": "Group Stage",
+    "group": "I",
+    "homeTeam": "France",
+    "awayTeam": "Senegal",
+    "homeOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "awayOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "playerMatchup": "Asiphe vs Onke",
+    "venue": "New York New Jersey Stadium",
+    "kickoffEt": "2026-06-16T15:00:00-04:00",
+    "kickoffSast": "2026-06-16T21:00:00+02:00",
+    "dateSast": "Tuesday 16/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m018",
+    "matchNumber": 18,
+    "stage": "Group Stage",
+    "group": "I",
+    "homeTeam": "Iraq",
+    "awayTeam": "Norway",
+    "homeOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "awayOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "playerMatchup": "Ayanda vs Jarvis",
+    "venue": "Boston Stadium",
+    "kickoffEt": "2026-06-16T18:00:00-04:00",
+    "kickoffSast": "2026-06-17T00:00:00+02:00",
+    "dateSast": "Wednesday 17/06/2026",
+    "timeSast": "00:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m019",
+    "matchNumber": 19,
+    "stage": "Group Stage",
+    "group": "J",
+    "homeTeam": "Argentina",
+    "awayTeam": "Algeria",
+    "homeOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "awayOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "playerMatchup": "Mudi vs Tmak",
+    "venue": "Kansas City Stadium",
+    "kickoffEt": "2026-06-16T21:00:00-04:00",
+    "kickoffSast": "2026-06-17T03:00:00+02:00",
+    "dateSast": "Wednesday 17/06/2026",
+    "timeSast": "03:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m020",
+    "matchNumber": 20,
+    "stage": "Group Stage",
+    "group": "J",
+    "homeTeam": "Austria",
+    "awayTeam": "Jordan",
+    "homeOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "awayOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "playerMatchup": "Jarvis vs Asiphe",
+    "venue": "San Francisco Bay Stadium",
+    "kickoffEt": "2026-06-17T00:00:00-04:00",
+    "kickoffSast": "2026-06-17T06:00:00+02:00",
+    "dateSast": "Wednesday 17/06/2026",
+    "timeSast": "06:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m021",
+    "matchNumber": 21,
+    "stage": "Group Stage",
+    "group": "K",
+    "homeTeam": "Portugal",
+    "awayTeam": "Congo DR",
+    "homeOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "awayOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "playerMatchup": "Sandile vs Sandile",
+    "venue": "Houston Stadium",
+    "kickoffEt": "2026-06-17T13:00:00-04:00",
+    "kickoffSast": "2026-06-17T19:00:00+02:00",
+    "dateSast": "Wednesday 17/06/2026",
+    "timeSast": "19:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m022",
+    "matchNumber": 22,
+    "stage": "Group Stage",
+    "group": "L",
+    "homeTeam": "England",
+    "awayTeam": "Croatia",
+    "homeOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "awayOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "playerMatchup": "Jarvis vs Magz",
+    "venue": "Dallas Stadium",
+    "kickoffEt": "2026-06-17T16:00:00-04:00",
+    "kickoffSast": "2026-06-17T22:00:00+02:00",
+    "dateSast": "Wednesday 17/06/2026",
+    "timeSast": "22:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m023",
+    "matchNumber": 23,
+    "stage": "Group Stage",
+    "group": "L",
+    "homeTeam": "Ghana",
+    "awayTeam": "Panama",
+    "homeOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "awayOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "playerMatchup": "Sandile vs Ndalo",
+    "venue": "Toronto Stadium",
+    "kickoffEt": "2026-06-17T19:00:00-04:00",
+    "kickoffSast": "2026-06-18T01:00:00+02:00",
+    "dateSast": "Thursday 18/06/2026",
+    "timeSast": "01:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m024",
+    "matchNumber": 24,
+    "stage": "Group Stage",
+    "group": "K",
+    "homeTeam": "Uzbekistan",
+    "awayTeam": "Colombia",
+    "homeOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "awayOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "playerMatchup": "Inathi vs Inathi",
+    "venue": "Mexico City Stadium",
+    "kickoffEt": "2026-06-17T22:00:00-04:00",
+    "kickoffSast": "2026-06-18T04:00:00+02:00",
+    "dateSast": "Thursday 18/06/2026",
+    "timeSast": "04:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m025",
+    "matchNumber": 25,
+    "stage": "Group Stage",
+    "group": "A",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "homeOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "awayOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "playerMatchup": "Mandla vs Onke",
+    "venue": "Atlanta Stadium",
+    "kickoffEt": "2026-06-18T12:00:00-04:00",
+    "kickoffSast": "2026-06-18T18:00:00+02:00",
+    "dateSast": "Thursday 18/06/2026",
+    "timeSast": "18:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m026",
+    "matchNumber": 26,
+    "stage": "Group Stage",
+    "group": "B",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Bosnia & Herzegovina",
+    "homeOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "awayOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "playerMatchup": "Tadhg vs Ayanda",
+    "venue": "Los Angeles Stadium",
+    "kickoffEt": "2026-06-18T15:00:00-04:00",
+    "kickoffSast": "2026-06-18T21:00:00+02:00",
+    "dateSast": "Thursday 18/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m027",
+    "matchNumber": 27,
+    "stage": "Group Stage",
+    "group": "B",
+    "homeTeam": "Canada",
+    "awayTeam": "Qatar",
+    "homeOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "awayOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "playerMatchup": "Inathi vs Mudi",
+    "venue": "BC Place Vancouver",
+    "kickoffEt": "2026-06-18T18:00:00-04:00",
+    "kickoffSast": "2026-06-19T00:00:00+02:00",
+    "dateSast": "Friday 19/06/2026",
+    "timeSast": "00:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m028",
+    "matchNumber": 28,
+    "stage": "Group Stage",
+    "group": "A",
+    "homeTeam": "Mexico",
+    "awayTeam": "Korea Republic",
+    "homeOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "awayOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "playerMatchup": "Jarvis vs Onke",
+    "venue": "Guadalajara Stadium",
+    "kickoffEt": "2026-06-18T21:00:00-04:00",
+    "kickoffSast": "2026-06-19T03:00:00+02:00",
+    "dateSast": "Friday 19/06/2026",
+    "timeSast": "03:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m029",
+    "matchNumber": 29,
+    "stage": "Group Stage",
+    "group": "D",
+    "homeTeam": "United States",
+    "awayTeam": "Australia",
+    "homeOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "awayOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "playerMatchup": "Ayanda vs Mudi",
+    "venue": "Seattle Stadium",
+    "kickoffEt": "2026-06-19T15:00:00-04:00",
+    "kickoffSast": "2026-06-19T21:00:00+02:00",
+    "dateSast": "Friday 19/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m030",
+    "matchNumber": 30,
+    "stage": "Group Stage",
+    "group": "C",
+    "homeTeam": "Scotland",
+    "awayTeam": "Morocco",
+    "homeOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "awayOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "playerMatchup": "Mandla vs Tmak",
+    "venue": "Boston Stadium",
+    "kickoffEt": "2026-06-19T15:00:00-04:00",
+    "kickoffSast": "2026-06-19T21:00:00+02:00",
+    "dateSast": "Friday 19/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m031",
+    "matchNumber": 31,
+    "stage": "Group Stage",
+    "group": "C",
+    "homeTeam": "Brazil",
+    "awayTeam": "Haiti",
+    "homeOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "awayOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "playerMatchup": "Ayanda vs Magz",
+    "venue": "Philadelphia Stadium",
+    "kickoffEt": "2026-06-19T21:00:00-04:00",
+    "kickoffSast": "2026-06-20T03:00:00+02:00",
+    "dateSast": "Saturday 20/06/2026",
+    "timeSast": "03:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m032",
+    "matchNumber": 32,
+    "stage": "Group Stage",
+    "group": "D",
+    "homeTeam": "Türkiye",
+    "awayTeam": "Paraguay",
+    "homeOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "awayOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "playerMatchup": "Mandla vs Tmak",
+    "venue": "San Francisco Bay Stadium",
+    "kickoffEt": "2026-06-20T00:00:00-04:00",
+    "kickoffSast": "2026-06-20T06:00:00+02:00",
+    "dateSast": "Saturday 20/06/2026",
+    "timeSast": "06:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m033",
+    "matchNumber": 33,
+    "stage": "Group Stage",
+    "group": "F",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Sweden",
+    "homeOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "awayOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "playerMatchup": "Ndalo vs Sandile",
+    "venue": "Houston Stadium",
+    "kickoffEt": "2026-06-20T13:00:00-04:00",
+    "kickoffSast": "2026-06-20T19:00:00+02:00",
+    "dateSast": "Saturday 20/06/2026",
+    "timeSast": "19:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m034",
+    "matchNumber": 34,
+    "stage": "Group Stage",
+    "group": "E",
+    "homeTeam": "Germany",
+    "awayTeam": "Ivory Coast",
+    "homeOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "awayOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "playerMatchup": "Onke vs Mudi",
+    "venue": "Toronto Stadium",
+    "kickoffEt": "2026-06-20T16:00:00-04:00",
+    "kickoffSast": "2026-06-20T22:00:00+02:00",
+    "dateSast": "Saturday 20/06/2026",
+    "timeSast": "22:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m035",
+    "matchNumber": 35,
+    "stage": "Group Stage",
+    "group": "E",
+    "homeTeam": "Ecuador",
+    "awayTeam": "Curaçao",
+    "homeOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "awayOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "playerMatchup": "Tadhg vs Magz",
+    "venue": "Kansas City Stadium",
+    "kickoffEt": "2026-06-20T20:00:00-04:00",
+    "kickoffSast": "2026-06-21T02:00:00+02:00",
+    "dateSast": "Sunday 21/06/2026",
+    "timeSast": "02:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m036",
+    "matchNumber": 36,
+    "stage": "Group Stage",
+    "group": "F",
+    "homeTeam": "Tunisia",
+    "awayTeam": "Japan",
+    "homeOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "awayOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "playerMatchup": "Tadhg vs Ndalo",
+    "venue": "Monterrey Stadium",
+    "kickoffEt": "2026-06-21T00:00:00-04:00",
+    "kickoffSast": "2026-06-21T06:00:00+02:00",
+    "dateSast": "Sunday 21/06/2026",
+    "timeSast": "06:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m037",
+    "matchNumber": 37,
+    "stage": "Group Stage",
+    "group": "H",
+    "homeTeam": "Spain",
+    "awayTeam": "Saudi Arabia",
+    "homeOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "awayOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "playerMatchup": "Tadhg vs Tmak",
+    "venue": "Atlanta Stadium",
+    "kickoffEt": "2026-06-21T12:00:00-04:00",
+    "kickoffSast": "2026-06-21T18:00:00+02:00",
+    "dateSast": "Sunday 21/06/2026",
+    "timeSast": "18:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m038",
+    "matchNumber": 38,
+    "stage": "Group Stage",
+    "group": "G",
+    "homeTeam": "Belgium",
+    "awayTeam": "Iran",
+    "homeOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "awayOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "playerMatchup": "Mandla vs Asiphe",
+    "venue": "Los Angeles Stadium",
+    "kickoffEt": "2026-06-21T15:00:00-04:00",
+    "kickoffSast": "2026-06-21T21:00:00+02:00",
+    "dateSast": "Sunday 21/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m039",
+    "matchNumber": 39,
+    "stage": "Group Stage",
+    "group": "H",
+    "homeTeam": "Uruguay",
+    "awayTeam": "Cape Verde",
+    "homeOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "awayOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "playerMatchup": "Magz vs Ndalo",
+    "venue": "Miami Stadium",
+    "kickoffEt": "2026-06-21T18:00:00-04:00",
+    "kickoffSast": "2026-06-22T00:00:00+02:00",
+    "dateSast": "Monday 22/06/2026",
+    "timeSast": "00:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m040",
+    "matchNumber": 40,
+    "stage": "Group Stage",
+    "group": "G",
+    "homeTeam": "New Zealand",
+    "awayTeam": "Egypt",
+    "homeOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "awayOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "playerMatchup": "Asiphe vs Inathi",
+    "venue": "BC Place Vancouver",
+    "kickoffEt": "2026-06-21T21:00:00-04:00",
+    "kickoffSast": "2026-06-22T03:00:00+02:00",
+    "dateSast": "Monday 22/06/2026",
+    "timeSast": "03:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m041",
+    "matchNumber": 41,
+    "stage": "Group Stage",
+    "group": "J",
+    "homeTeam": "Argentina",
+    "awayTeam": "Austria",
+    "homeOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "awayOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "playerMatchup": "Mudi vs Jarvis",
+    "venue": "Dallas Stadium",
+    "kickoffEt": "2026-06-22T13:00:00-04:00",
+    "kickoffSast": "2026-06-22T19:00:00+02:00",
+    "dateSast": "Monday 22/06/2026",
+    "timeSast": "19:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m042",
+    "matchNumber": 42,
+    "stage": "Group Stage",
+    "group": "I",
+    "homeTeam": "France",
+    "awayTeam": "Iraq",
+    "homeOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "awayOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "playerMatchup": "Asiphe vs Ayanda",
+    "venue": "Philadelphia Stadium",
+    "kickoffEt": "2026-06-22T17:00:00-04:00",
+    "kickoffSast": "2026-06-22T23:00:00+02:00",
+    "dateSast": "Monday 22/06/2026",
+    "timeSast": "23:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m043",
+    "matchNumber": 43,
+    "stage": "Group Stage",
+    "group": "I",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "homeOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "awayOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "playerMatchup": "Jarvis vs Onke",
+    "venue": "New York New Jersey Stadium",
+    "kickoffEt": "2026-06-22T20:00:00-04:00",
+    "kickoffSast": "2026-06-23T02:00:00+02:00",
+    "dateSast": "Tuesday 23/06/2026",
+    "timeSast": "02:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m044",
+    "matchNumber": 44,
+    "stage": "Group Stage",
+    "group": "J",
+    "homeTeam": "Jordan",
+    "awayTeam": "Algeria",
+    "homeOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "awayOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "playerMatchup": "Asiphe vs Tmak",
+    "venue": "San Francisco Bay Stadium",
+    "kickoffEt": "2026-06-22T23:00:00-04:00",
+    "kickoffSast": "2026-06-23T05:00:00+02:00",
+    "dateSast": "Tuesday 23/06/2026",
+    "timeSast": "05:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m045",
+    "matchNumber": 45,
+    "stage": "Group Stage",
+    "group": "K",
+    "homeTeam": "Portugal",
+    "awayTeam": "Uzbekistan",
+    "homeOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "awayOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "playerMatchup": "Sandile vs Inathi",
+    "venue": "Houston Stadium",
+    "kickoffEt": "2026-06-23T13:00:00-04:00",
+    "kickoffSast": "2026-06-23T19:00:00+02:00",
+    "dateSast": "Tuesday 23/06/2026",
+    "timeSast": "19:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m046",
+    "matchNumber": 46,
+    "stage": "Group Stage",
+    "group": "L",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "homeOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "awayOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "playerMatchup": "Jarvis vs Sandile",
+    "venue": "Boston Stadium",
+    "kickoffEt": "2026-06-23T16:00:00-04:00",
+    "kickoffSast": "2026-06-23T22:00:00+02:00",
+    "dateSast": "Tuesday 23/06/2026",
+    "timeSast": "22:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m047",
+    "matchNumber": 47,
+    "stage": "Group Stage",
+    "group": "L",
+    "homeTeam": "Panama",
+    "awayTeam": "Croatia",
+    "homeOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "awayOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "playerMatchup": "Ndalo vs Magz",
+    "venue": "Toronto Stadium",
+    "kickoffEt": "2026-06-23T19:00:00-04:00",
+    "kickoffSast": "2026-06-24T01:00:00+02:00",
+    "dateSast": "Wednesday 24/06/2026",
+    "timeSast": "01:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m048",
+    "matchNumber": 48,
+    "stage": "Group Stage",
+    "group": "K",
+    "homeTeam": "Colombia",
+    "awayTeam": "Congo DR",
+    "homeOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "awayOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "playerMatchup": "Inathi vs Sandile",
+    "venue": "Guadalajara Stadium",
+    "kickoffEt": "2026-06-23T22:00:00-04:00",
+    "kickoffSast": "2026-06-24T04:00:00+02:00",
+    "dateSast": "Wednesday 24/06/2026",
+    "timeSast": "04:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m049",
+    "matchNumber": 49,
+    "stage": "Group Stage",
+    "group": "B",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Canada",
+    "homeOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "awayOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "playerMatchup": "Tadhg vs Inathi",
+    "venue": "BC Place Vancouver",
+    "kickoffEt": "2026-06-24T15:00:00-04:00",
+    "kickoffSast": "2026-06-24T21:00:00+02:00",
+    "dateSast": "Wednesday 24/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m050",
+    "matchNumber": 50,
+    "stage": "Group Stage",
+    "group": "B",
+    "homeTeam": "Bosnia & Herzegovina",
+    "awayTeam": "Qatar",
+    "homeOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "awayOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "playerMatchup": "Ayanda vs Mudi",
+    "venue": "Seattle Stadium",
+    "kickoffEt": "2026-06-24T15:00:00-04:00",
+    "kickoffSast": "2026-06-24T21:00:00+02:00",
+    "dateSast": "Wednesday 24/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m051",
+    "matchNumber": 51,
+    "stage": "Group Stage",
+    "group": "C",
+    "homeTeam": "Brazil",
+    "awayTeam": "Scotland",
+    "homeOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "awayOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "playerMatchup": "Ayanda vs Mandla",
+    "venue": "Miami Stadium",
+    "kickoffEt": "2026-06-24T18:00:00-04:00",
+    "kickoffSast": "2026-06-25T00:00:00+02:00",
+    "dateSast": "Thursday 25/06/2026",
+    "timeSast": "00:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m052",
+    "matchNumber": 52,
+    "stage": "Group Stage",
+    "group": "C",
+    "homeTeam": "Morocco",
+    "awayTeam": "Haiti",
+    "homeOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "awayOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "playerMatchup": "Tmak vs Magz",
+    "venue": "Atlanta Stadium",
+    "kickoffEt": "2026-06-24T18:00:00-04:00",
+    "kickoffSast": "2026-06-25T00:00:00+02:00",
+    "dateSast": "Thursday 25/06/2026",
+    "timeSast": "00:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m053",
+    "matchNumber": 53,
+    "stage": "Group Stage",
+    "group": "A",
+    "homeTeam": "Mexico",
+    "awayTeam": "Czechia",
+    "homeOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "awayOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "playerMatchup": "Jarvis vs Mandla",
+    "venue": "Mexico City Stadium",
+    "kickoffEt": "2026-06-24T21:00:00-04:00",
+    "kickoffSast": "2026-06-25T03:00:00+02:00",
+    "dateSast": "Thursday 25/06/2026",
+    "timeSast": "03:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m054",
+    "matchNumber": 54,
+    "stage": "Group Stage",
+    "group": "A",
+    "homeTeam": "Korea Republic",
+    "awayTeam": "South Africa",
+    "homeOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "awayOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "playerMatchup": "Onke vs Onke",
+    "venue": "Monterrey Stadium",
+    "kickoffEt": "2026-06-24T21:00:00-04:00",
+    "kickoffSast": "2026-06-25T03:00:00+02:00",
+    "dateSast": "Thursday 25/06/2026",
+    "timeSast": "03:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m055",
+    "matchNumber": 55,
+    "stage": "Group Stage",
+    "group": "E",
+    "homeTeam": "Ecuador",
+    "awayTeam": "Germany",
+    "homeOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "awayOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "playerMatchup": "Tadhg vs Onke",
+    "venue": "New York New Jersey Stadium",
+    "kickoffEt": "2026-06-25T16:00:00-04:00",
+    "kickoffSast": "2026-06-25T22:00:00+02:00",
+    "dateSast": "Thursday 25/06/2026",
+    "timeSast": "22:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m056",
+    "matchNumber": 56,
+    "stage": "Group Stage",
+    "group": "E",
+    "homeTeam": "Curaçao",
+    "awayTeam": "Ivory Coast",
+    "homeOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "awayOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "playerMatchup": "Magz vs Mudi",
+    "venue": "Philadelphia Stadium",
+    "kickoffEt": "2026-06-25T16:00:00-04:00",
+    "kickoffSast": "2026-06-25T22:00:00+02:00",
+    "dateSast": "Thursday 25/06/2026",
+    "timeSast": "22:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m057",
+    "matchNumber": 57,
+    "stage": "Group Stage",
+    "group": "F",
+    "homeTeam": "Tunisia",
+    "awayTeam": "Netherlands",
+    "homeOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "awayOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "playerMatchup": "Tadhg vs Ndalo",
+    "venue": "Kansas City Stadium",
+    "kickoffEt": "2026-06-25T19:00:00-04:00",
+    "kickoffSast": "2026-06-26T01:00:00+02:00",
+    "dateSast": "Friday 26/06/2026",
+    "timeSast": "01:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m058",
+    "matchNumber": 58,
+    "stage": "Group Stage",
+    "group": "F",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "homeOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "awayOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "playerMatchup": "Ndalo vs Sandile",
+    "venue": "Dallas Stadium",
+    "kickoffEt": "2026-06-25T19:00:00-04:00",
+    "kickoffSast": "2026-06-26T01:00:00+02:00",
+    "dateSast": "Friday 26/06/2026",
+    "timeSast": "01:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m059",
+    "matchNumber": 59,
+    "stage": "Group Stage",
+    "group": "D",
+    "homeTeam": "United States",
+    "awayTeam": "Türkiye",
+    "homeOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "awayOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "playerMatchup": "Ayanda vs Mandla",
+    "venue": "Los Angeles Stadium",
+    "kickoffEt": "2026-06-25T22:00:00-04:00",
+    "kickoffSast": "2026-06-26T04:00:00+02:00",
+    "dateSast": "Friday 26/06/2026",
+    "timeSast": "04:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m060",
+    "matchNumber": 60,
+    "stage": "Group Stage",
+    "group": "D",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "homeOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "awayOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "playerMatchup": "Tmak vs Mudi",
+    "venue": "San Francisco Bay Stadium",
+    "kickoffEt": "2026-06-25T22:00:00-04:00",
+    "kickoffSast": "2026-06-26T04:00:00+02:00",
+    "dateSast": "Friday 26/06/2026",
+    "timeSast": "04:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m061",
+    "matchNumber": 61,
+    "stage": "Group Stage",
+    "group": "I",
+    "homeTeam": "Norway",
+    "awayTeam": "France",
+    "homeOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "awayOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "playerMatchup": "Jarvis vs Asiphe",
+    "venue": "Boston Stadium",
+    "kickoffEt": "2026-06-26T15:00:00-04:00",
+    "kickoffSast": "2026-06-26T21:00:00+02:00",
+    "dateSast": "Friday 26/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m062",
+    "matchNumber": 62,
+    "stage": "Group Stage",
+    "group": "I",
+    "homeTeam": "Senegal",
+    "awayTeam": "Iraq",
+    "homeOwner": {
+      "playerId": "onke",
+      "playerName": "Onke",
+      "color": "#0EA5E9"
+    },
+    "awayOwner": {
+      "playerId": "ayanda",
+      "playerName": "Ayanda",
+      "color": "#EC4899"
+    },
+    "playerMatchup": "Onke vs Ayanda",
+    "venue": "Toronto Stadium",
+    "kickoffEt": "2026-06-26T15:00:00-04:00",
+    "kickoffSast": "2026-06-26T21:00:00+02:00",
+    "dateSast": "Friday 26/06/2026",
+    "timeSast": "21:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m063",
+    "matchNumber": 63,
+    "stage": "Group Stage",
+    "group": "H",
+    "homeTeam": "Uruguay",
+    "awayTeam": "Spain",
+    "homeOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "awayOwner": {
+      "playerId": "tadhg",
+      "playerName": "Tadhg",
+      "color": "#EAB308"
+    },
+    "playerMatchup": "Magz vs Tadhg",
+    "venue": "Guadalajara Stadium",
+    "kickoffEt": "2026-06-26T20:00:00-04:00",
+    "kickoffSast": "2026-06-27T02:00:00+02:00",
+    "dateSast": "Saturday 27/06/2026",
+    "timeSast": "02:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m064",
+    "matchNumber": 64,
+    "stage": "Group Stage",
+    "group": "H",
+    "homeTeam": "Cape Verde",
+    "awayTeam": "Saudi Arabia",
+    "homeOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "awayOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "playerMatchup": "Ndalo vs Tmak",
+    "venue": "Houston Stadium",
+    "kickoffEt": "2026-06-26T20:00:00-04:00",
+    "kickoffSast": "2026-06-27T02:00:00+02:00",
+    "dateSast": "Saturday 27/06/2026",
+    "timeSast": "02:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m065",
+    "matchNumber": 65,
+    "stage": "Group Stage",
+    "group": "G",
+    "homeTeam": "New Zealand",
+    "awayTeam": "Belgium",
+    "homeOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "awayOwner": {
+      "playerId": "mandla",
+      "playerName": "Mandla",
+      "color": "#6366F1"
+    },
+    "playerMatchup": "Asiphe vs Mandla",
+    "venue": "BC Place Vancouver",
+    "kickoffEt": "2026-06-26T23:00:00-04:00",
+    "kickoffSast": "2026-06-27T05:00:00+02:00",
+    "dateSast": "Saturday 27/06/2026",
+    "timeSast": "05:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m066",
+    "matchNumber": 66,
+    "stage": "Group Stage",
+    "group": "G",
+    "homeTeam": "Egypt",
+    "awayTeam": "Iran",
+    "homeOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "awayOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "playerMatchup": "Inathi vs Asiphe",
+    "venue": "Seattle Stadium",
+    "kickoffEt": "2026-06-26T23:00:00-04:00",
+    "kickoffSast": "2026-06-27T05:00:00+02:00",
+    "dateSast": "Saturday 27/06/2026",
+    "timeSast": "05:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m067",
+    "matchNumber": 67,
+    "stage": "Group Stage",
+    "group": "L",
+    "homeTeam": "Panama",
+    "awayTeam": "England",
+    "homeOwner": {
+      "playerId": "ndalo",
+      "playerName": "Ndalo",
+      "color": "#8B5CF6"
+    },
+    "awayOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "playerMatchup": "Ndalo vs Jarvis",
+    "venue": "New York New Jersey Stadium",
+    "kickoffEt": "2026-06-27T17:00:00-04:00",
+    "kickoffSast": "2026-06-27T23:00:00+02:00",
+    "dateSast": "Saturday 27/06/2026",
+    "timeSast": "23:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m068",
+    "matchNumber": 68,
+    "stage": "Group Stage",
+    "group": "L",
+    "homeTeam": "Croatia",
+    "awayTeam": "Ghana",
+    "homeOwner": {
+      "playerId": "magz",
+      "playerName": "Magz",
+      "color": "#06B6D4"
+    },
+    "awayOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "playerMatchup": "Magz vs Sandile",
+    "venue": "Philadelphia Stadium",
+    "kickoffEt": "2026-06-27T17:00:00-04:00",
+    "kickoffSast": "2026-06-27T23:00:00+02:00",
+    "dateSast": "Saturday 27/06/2026",
+    "timeSast": "23:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m069",
+    "matchNumber": 69,
+    "stage": "Group Stage",
+    "group": "K",
+    "homeTeam": "Colombia",
+    "awayTeam": "Portugal",
+    "homeOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "awayOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "playerMatchup": "Inathi vs Sandile",
+    "venue": "Miami Stadium",
+    "kickoffEt": "2026-06-27T19:30:00-04:00",
+    "kickoffSast": "2026-06-28T01:30:00+02:00",
+    "dateSast": "Sunday 28/06/2026",
+    "timeSast": "01:30",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m070",
+    "matchNumber": 70,
+    "stage": "Group Stage",
+    "group": "K",
+    "homeTeam": "Congo DR",
+    "awayTeam": "Uzbekistan",
+    "homeOwner": {
+      "playerId": "sandile",
+      "playerName": "Sandile",
+      "color": "#EF4444"
+    },
+    "awayOwner": {
+      "playerId": "inathi",
+      "playerName": "Inathi",
+      "color": "#F43F5E"
+    },
+    "playerMatchup": "Sandile vs Inathi",
+    "venue": "Atlanta Stadium",
+    "kickoffEt": "2026-06-27T19:30:00-04:00",
+    "kickoffSast": "2026-06-28T01:30:00+02:00",
+    "dateSast": "Sunday 28/06/2026",
+    "timeSast": "01:30",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m071",
+    "matchNumber": 71,
+    "stage": "Group Stage",
+    "group": "J",
+    "homeTeam": "Argentina",
+    "awayTeam": "Jordan",
+    "homeOwner": {
+      "playerId": "mudi",
+      "playerName": "Mudi",
+      "color": "#14B8A6"
+    },
+    "awayOwner": {
+      "playerId": "asiphe",
+      "playerName": "Asiphe",
+      "color": "#22C55E"
+    },
+    "playerMatchup": "Mudi vs Asiphe",
+    "venue": "Dallas Stadium",
+    "kickoffEt": "2026-06-27T22:00:00-04:00",
+    "kickoffSast": "2026-06-28T04:00:00+02:00",
+    "dateSast": "Sunday 28/06/2026",
+    "timeSast": "04:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  },
+  {
+    "id": "m072",
+    "matchNumber": 72,
+    "stage": "Group Stage",
+    "group": "J",
+    "homeTeam": "Algeria",
+    "awayTeam": "Austria",
+    "homeOwner": {
+      "playerId": "tmak",
+      "playerName": "Tmak",
+      "color": "#84CC16"
+    },
+    "awayOwner": {
+      "playerId": "jarvis",
+      "playerName": "Jarvis",
+      "color": "#F97316"
+    },
+    "playerMatchup": "Tmak vs Jarvis",
+    "venue": "Kansas City Stadium",
+    "kickoffEt": "2026-06-27T22:00:00-04:00",
+    "kickoffSast": "2026-06-28T04:00:00+02:00",
+    "dateSast": "Sunday 28/06/2026",
+    "timeSast": "04:00",
+    "status": "scheduled",
+    "homeScore": null,
+    "awayScore": null
+  }
+]
