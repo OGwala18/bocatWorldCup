@@ -75,7 +75,7 @@ export type AppState = {
   provider: string | null;
 };
 
-const API_BASE = import.meta.env.VITE_API_BASE ?? "";
+const API_BASE = (import.meta.env.VITE_API_BASE ?? "").replace(/\/+$/, "");
 
 export async function fetchState(): Promise<AppState> {
   const response = await fetch(`${API_BASE}/api/state`);

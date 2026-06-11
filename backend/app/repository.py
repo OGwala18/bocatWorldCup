@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from .config import DATA_DIR
+from .config import DATA_DIR, settings
 
 
 STAGE_POINTS = {
@@ -60,6 +60,23 @@ def save_json(filename: str, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def load_live_state() -> dict[str, Any]:
+    path = settings.live_state_path
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    default_state = load_json("live_state.json")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(default_state, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return default_state
+
+
+def save_live_state(payload: dict[str, Any]) -> None:
+    path = settings.live_state_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def load_static() -> dict[str, Any]:
     return {
         "players": load_json("players.json"),
@@ -68,7 +85,7 @@ def load_static() -> dict[str, Any]:
         "fixtures": load_json("fixtures.json"),
         "knockoutFixtures": load_json("knockout_fixtures.json"),
         "scoring": load_json("scoring.json"),
-        "liveState": load_json("live_state.json"),
+        "liveState": load_live_state(),
     }
 
 
@@ -248,7 +265,7 @@ def build_state() -> dict[str, Any]:
 
 
 def upsert_live_fixtures(updates: list[dict[str, Any]], provider: str | None = None) -> dict[str, Any]:
-    live_state = load_json("live_state.json")
+    live_state = load_live_state()
     existing = {fixture["id"]: fixture for fixture in live_state.get("fixtures", [])}
     for update in updates:
         existing[update["id"]] = {**existing.get(update["id"], {}), **update}
@@ -256,15 +273,15 @@ def upsert_live_fixtures(updates: list[dict[str, Any]], provider: str | None = N
     live_state["lastUpdated"] = datetime.now().astimezone().isoformat()
     if provider:
         live_state["provider"] = provider
-    save_json("live_state.json", live_state)
+    save_live_state(live_state)
     return live_state
 
 
 def update_advancements(advancements: dict[str, str], provider: str | None = None) -> dict[str, Any]:
-    live_state = load_json("live_state.json")
+    live_state = load_live_state()
     live_state["advancements"] = merge_advancements(live_state.get("advancements", {}), advancements)
     live_state["lastUpdated"] = datetime.now().astimezone().isoformat()
     if provider:
         live_state["provider"] = provider
-    save_json("live_state.json", live_state)
+    save_live_state(live_state)
     return live_state

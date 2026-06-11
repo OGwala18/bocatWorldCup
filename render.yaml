@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: bocat-world-cup-api
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python -m uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: CORS_ORIGINS
+        value: http://localhost:5173,http://127.0.0.1:5173,https://your-netlify-site.netlify.app
+      - key: FALLBACK_SCORES_PROVIDER
+        value: espn
+      - key: FALLBACK_SCORES_URL_TEMPLATE
+        value: https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates={date}
+      - key: QUALIFICATION_STANDINGS_URL
+        value: https://site.web.api.espn.com/apis/v2/sports/soccer/fifa.world/standings?season=2026
+      - key: POST_MATCH_DELAY_MINUTES
+        value: 120
+      - key: SCORE_POLL_START_MINUTES_BEFORE_KICKOFF
+        value: 0
+      - key: SCORE_POLL_END_MINUTES_AFTER_KICKOFF
+        value: 180
+      - key: SCORE_POLL_INTERVAL_MINUTES
+        value: 10
+      - key: ENABLE_SCORE_POLLING
+        value: true
+      - key: LIVE_MATCHES_PROVIDER
+        value: api-football
+      - key: LIVE_MATCHES_API_URL
+        value: https://api-football-v1.p.rapidapi.com/v3/fixtures?league=1&season=2026&timezone=Africa/Johannesburg
+      - key: LIVE_MATCHES_API_KEY_HEADER
+        value: x-rapidapi-key
+      - key: LIVE_MATCHES_EXTRA_HEADERS
+        value: x-rapidapi-host=api-football-v1.p.rapidapi.com
+      - key: LIVE_MATCHES_API_KEY
+        sync: false

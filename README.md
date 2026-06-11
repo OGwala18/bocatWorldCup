@@ -44,6 +44,38 @@ npm run dev
 
 Open `http://127.0.0.1:5173`.
 
+## Deploy
+
+This project has two deployable parts:
+
+- Netlify hosts the React frontend in `frontend/`.
+- A Python web host, such as Render, hosts the FastAPI backend.
+
+Netlify is configured by `netlify.toml`:
+
+```text
+Base directory: frontend
+Build command: npm ci && npm run build
+Publish directory: frontend/dist
+```
+
+The frontend must know the backend URL. In Netlify, set:
+
+```text
+VITE_API_BASE=https://your-backend-url
+```
+
+Then redeploy the Netlify site. If `VITE_API_BASE` is missing, the frontend will try to call `/api/state` on the Netlify domain, which will fail because Netlify is not running the FastAPI backend.
+
+Render is configured by `render.yaml`. After the backend is deployed, update these environment values in Render:
+
+```text
+CORS_ORIGINS=https://your-netlify-site.netlify.app,http://localhost:5173,http://127.0.0.1:5173
+LIVE_MATCHES_API_KEY=your_key_if_you_have_one
+```
+
+The ESPN scoreboard fallback does not need an API key. The paid football API key is optional and currently only useful if the provider account has 2026 World Cup access.
+
 ## Live API
 
 Copy `.env.example` to `.env` and fill in the provider endpoint/key. The current adapter accepts common football API response shapes and maps results back to the local fixture list.
