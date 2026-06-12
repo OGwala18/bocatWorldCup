@@ -9,7 +9,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.12.8
       - key: CORS_ORIGINS
-        value: http://localhost:5173,http://127.0.0.1:5173,https://your-netlify-site.netlify.app
+        value: http://localhost:5173,http://127.0.0.1:5173,https://bocatworldcup.netlify.app
       - key: FALLBACK_SCORES_PROVIDER
         value: espn
       - key: FALLBACK_SCORES_URL_TEMPLATE

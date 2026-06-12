@@ -80,8 +80,24 @@ VITE_DEBUG_API=false
 Render is configured by `render.yaml`. After the backend is deployed, update these environment values in Render:
 
 ```text
-CORS_ORIGINS=https://your-netlify-site.netlify.app,http://localhost:5173,http://127.0.0.1:5173
+CORS_ORIGINS=https://bocatworldcup.netlify.app,http://localhost:5173,http://127.0.0.1:5173
 LIVE_MATCHES_API_KEY=your_key_if_you_have_one
+```
+
+If you created the Render service manually instead of from `render.yaml`, use these settings:
+
+```text
+Runtime: Python 3
+Build command: pip install -r requirements.txt
+Start command: python -m uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+```
+
+The root `requirements.txt` points Render to `backend/requirements.txt`, and `.python-version` pins the service to Python 3.12.8.
+
+After Render is healthy, set Netlify's frontend API variable to:
+
+```text
+VITE_API_BASE=https://bocatworldcup.onrender.com
 ```
 
 The ESPN scoreboard fallback does not need an API key. The paid football API key is optional and currently only useful if the provider account has 2026 World Cup access.
