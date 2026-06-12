@@ -33,7 +33,10 @@ class Settings:
     live_state_path = Path(os.getenv("LIVE_STATE_PATH", str(DATA_DIR / "live_state.json"))).expanduser()
     cors_origins = [
         origin.strip()
-        for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
+        for origin in os.getenv(
+            "CORS_ORIGINS",
+            "http://localhost:5173,http://127.0.0.1:5173,https://bocatworldcup.netlify.app",
+        ).split(",")
         if origin.strip()
     ]
     live_matches_api_url = os.getenv("LIVE_MATCHES_API_URL", "").strip()
