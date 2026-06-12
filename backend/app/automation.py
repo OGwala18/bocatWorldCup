@@ -93,6 +93,7 @@ def print_state() -> None:
             {
                 "lastUpdated": state["lastUpdated"],
                 "leaderboard": state["leaderboard"],
+                "groupStandings": state["groupStandings"],
                 "groupStageCompleteAtSast": state["scoring"]["groupStageCompleteAtSast"],
             },
             ensure_ascii=False,
@@ -105,7 +106,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Bocat live data automation")
     parser.add_argument(
         "command",
-        choices=["sync-live", "sync-scores", "sync-postmatch", "state"],
+        choices=["sync-live", "sync-scores", "sync-standings", "sync-postmatch", "state"],
         help="Automation command to run",
     )
     parser.add_argument("--now", help="Override current time for post-match checks, ISO format.")
@@ -114,7 +115,7 @@ def main() -> None:
 
     if args.command == "sync-live":
         asyncio.run(sync_live())
-    elif args.command == "sync-scores":
+    elif args.command in {"sync-scores", "sync-standings"}:
         asyncio.run(sync_scores(parse_datetime(args.now) if args.now else None, dry_run=args.dry_run))
     elif args.command == "sync-postmatch":
         asyncio.run(sync_postmatch(parse_datetime(args.now) if args.now else None, dry_run=args.dry_run))

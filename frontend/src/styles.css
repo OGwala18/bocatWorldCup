@@ -343,22 +343,54 @@ main {
   margin-bottom: 8px;
 }
 
-.group-team {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 86px 42px;
-  align-items: center;
-  gap: 7px;
-  min-height: 38px;
-  border-top: 1px solid #eef2f7;
+.standings-table {
+  overflow-x: auto;
 }
 
-.group-team span:nth-child(2) {
-  color: #475569;
-  font-size: 12px;
+.standings-row {
+  display: grid;
+  grid-template-columns: 24px minmax(150px, 1fr) repeat(5, 30px) 36px;
+  align-items: center;
+  gap: 7px;
+  min-width: 390px;
+  min-height: 42px;
+  border-top: 1px solid #eef2f7;
+  font-size: 13px;
   font-weight: 800;
 }
 
-.group-team b {
+.standings-head {
+  min-height: 28px;
+  border-top: 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.standings-head span:not(:nth-child(2)),
+.standings-row > span:not(:nth-child(2)),
+.standings-row b {
+  text-align: center;
+}
+
+.standings-rank {
+  color: #64748b;
+}
+
+.standings-team {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 68px;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.standings-team > span {
+  color: #475569;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.standings-row b {
   justify-self: end;
   color: #1f3556;
 }
@@ -523,8 +555,17 @@ main {
     font-size: 12px;
   }
 
-  .group-team {
-    grid-template-columns: minmax(0, 1fr) 72px 38px;
-    min-height: 42px;
+  .standings-row {
+    grid-template-columns: 22px minmax(126px, 1fr) repeat(5, 28px) 34px;
+    min-width: 350px;
+    gap: 5px;
+  }
+
+  .standings-team {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .standings-team > span {
+    display: none;
   }
 }

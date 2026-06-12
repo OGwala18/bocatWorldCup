@@ -1,16 +1,7 @@
 import { CalendarClock, RefreshCw, Radio, Trophy } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import heroUrl from "./assets/bocat-hero.png";
-import { AppState, Fixture, Team, fetchState, syncLive } from "./api";
-
-const stageLabels: Record<string, string> = {
-  group: "Group",
-  round_of_32: "R32",
-  round_of_16: "R16",
-  quarterfinal: "QF",
-  semifinal: "SF",
-  final: "Final",
-};
+import { AppState, Fixture, GroupStandingRow, Team, fetchState, syncLive } from "./api";
 
 function textColor(hex: string) {
   const raw = hex.replace("#", "");
@@ -21,7 +12,9 @@ function textColor(hex: string) {
   return luminance > 0.62 ? "#111827" : "#ffffff";
 }
 
-function TeamPill({ team }: { team: Team }) {
+type OwnedTeam = Pick<Team, "name" | "owner">;
+
+function TeamPill({ team }: { team: OwnedTeam }) {
   return (
     <span
       className="team-pill"
@@ -64,6 +57,15 @@ function StatusPill({ fixture }: { fixture: Fixture }) {
   return <span className={`status-pill ${meta.tone}`}>{meta.label}</span>;
 }
 
+function StandingsTeam({ row }: { row: GroupStandingRow }) {
+  return (
+    <div className="standings-team">
+      <TeamPill team={{ name: row.team, owner: row.owner }} />
+      <span>{row.owner.playerName}</span>
+    </div>
+  );
+}
+
 function App() {
   const [state, setState] = useState<AppState | null>(null);
   const [loading, setLoading] = useState(true);
@@ -80,6 +82,7 @@ function App() {
         assignedTeams: nextState.teams.length,
         groupFixtures: nextState.fixtures.length,
         knockoutFixtures: nextState.knockoutFixtures.length,
+        groupStandings: Object.keys(nextState.groupStandings ?? {}).length,
         provider: nextState.provider ?? "not connected",
         lastUpdated: nextState.lastUpdated,
       });
@@ -121,12 +124,37 @@ function App() {
     return new Map(state?.teams.map((team) => [team.name, team]) ?? []);
   }, [state]);
 
-  const groupedTeams = useMemo(() => {
+  const groupedStandings = useMemo(() => {
     if (!state) return [];
-    return state.groups.map((group) => ({
-      group: group.group,
-      teams: group.teams.map((team) => teamByName.get(team)).filter(Boolean) as Team[],
-    }));
+    return state.groups.map((group) => {
+      const fallbackRows = group.teams
+        .map((teamName, index) => {
+          const team = teamByName.get(teamName);
+          if (!team) return null;
+          return {
+            rank: index + 1,
+            group: group.group,
+            team: team.name,
+            owner: team.owner,
+            played: 0,
+            won: 0,
+            drawn: 0,
+            lost: 0,
+            gf: 0,
+            ga: 0,
+            gd: 0,
+            points: 0,
+            stageReached: team.stageReached,
+            stagePoints: team.points,
+          };
+        })
+        .filter(Boolean) as GroupStandingRow[];
+
+      return {
+        group: group.group,
+        rows: state.groupStandings?.[group.group] ?? fallbackRows,
+      };
+    });
   }, [state, teamByName]);
 
   const visibleFixtures = useMemo(() => {
@@ -279,16 +307,33 @@ function App() {
           <h2>Group Tables</h2>
         </div>
         <div className="groups-grid">
-          {groupedTeams.map((group) => (
+          {groupedStandings.map((group) => (
             <article className="group-card" key={group.group}>
               <h3>Group {group.group}</h3>
-              {group.teams.map((team) => (
-                <div className="group-team" key={team.name}>
-                  <TeamPill team={team} />
-                  <span>{team.owner.playerName}</span>
-                  <b>{stageLabels[team.stageReached] ?? team.stageReached}</b>
+              <div className="standings-table">
+                <div className="standings-row standings-head">
+                  <span>#</span>
+                  <span>Team</span>
+                  <span>P</span>
+                  <span>W</span>
+                  <span>D</span>
+                  <span>L</span>
+                  <span>GD</span>
+                  <span>Pts</span>
                 </div>
-              ))}
+                {group.rows.map((row) => (
+                  <div className="standings-row" key={row.team}>
+                    <span className="standings-rank">{row.rank}</span>
+                    <StandingsTeam row={row} />
+                    <span>{row.played}</span>
+                    <span>{row.won}</span>
+                    <span>{row.drawn}</span>
+                    <span>{row.lost}</span>
+                    <span>{row.gd > 0 ? `+${row.gd}` : row.gd}</span>
+                    <b>{row.points}</b>
+                  </div>
+                ))}
+              </div>
             </article>
           ))}
         </div>

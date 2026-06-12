@@ -57,10 +57,28 @@ export type Group = {
   teams: string[];
 };
 
+export type GroupStandingRow = {
+  rank: number;
+  group: string;
+  team: string;
+  owner: Owner;
+  played: number;
+  won: number;
+  drawn: number;
+  lost: number;
+  gf: number;
+  ga: number;
+  gd: number;
+  points: number;
+  stageReached: string;
+  stagePoints: number;
+};
+
 export type AppState = {
   players: Player[];
   teams: Team[];
   groups: Group[];
+  groupStandings: Record<string, GroupStandingRow[]>;
   fixtures: Fixture[];
   knockoutFixtures: Fixture[];
   leaderboard: LeaderboardRow[];

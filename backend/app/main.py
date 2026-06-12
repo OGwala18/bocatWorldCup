@@ -4,7 +4,9 @@ import asyncio
 import contextlib
 import logging
 import time
+from datetime import datetime, timedelta
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -33,6 +35,7 @@ app.add_middleware(
 )
 
 score_poll_task: asyncio.Task[None] | None = None
+daily_standings_task: asyncio.Task[None] | None = None
 
 
 @app.middleware("http")
@@ -101,15 +104,61 @@ async def score_poll_loop() -> None:
         await asyncio.sleep(max(settings.score_poll_interval_minutes, 1) * 60)
 
 
+def daily_sync_target(now: datetime) -> datetime:
+    try:
+        hour_text, minute_text = settings.daily_standings_sync_time.split(":", maxsplit=1)
+        hour = int(hour_text)
+        minute = int(minute_text)
+        if not (0 <= hour <= 23 and 0 <= minute <= 59):
+            raise ValueError("Daily sync time is out of range")
+    except (TypeError, ValueError):
+        hour = 8
+        minute = 0
+
+    target = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+    if target <= now:
+        target += timedelta(days=1)
+    return target
+
+
+async def daily_standings_sync_loop() -> None:
+    timezone = ZoneInfo(settings.timezone)
+    while True:
+        now = datetime.now(timezone)
+        target = daily_sync_target(now)
+        wait_seconds = max((target - now).total_seconds(), 1)
+        logger.info(
+            "Daily group standings sync scheduled target=%s wait_seconds=%s",
+            target.isoformat(),
+            round(wait_seconds),
+        )
+        await asyncio.sleep(wait_seconds)
+        try:
+            result = await run_scoreboard_poll()
+            state = build_state()
+            logger.info(
+                "Daily group standings sync complete updated=%s final=%s live=%s groups=%s",
+                result["updatedFixtures"],
+                result["finalFixtures"],
+                result["liveFixtures"],
+                len(state["groupStandings"]),
+            )
+        except Exception as exc:
+            logger.exception("Daily group standings sync failed: %s", exc)
+        await asyncio.sleep(60)
+
+
 @app.on_event("startup")
 async def start_score_polling() -> None:
-    global score_poll_task
+    global score_poll_task, daily_standings_task
     logger.info(
-        "Starting Bocat API timezone=%s cors_origins=%s score_polling=%s poll_interval_minutes=%s live_provider=%s live_api_configured=%s fallback_provider=%s state_path=%s",
+        "Starting Bocat API timezone=%s cors_origins=%s score_polling=%s poll_interval_minutes=%s daily_standings_sync=%s daily_standings_time=%s live_provider=%s live_api_configured=%s fallback_provider=%s state_path=%s",
         settings.timezone,
         settings.cors_origins,
         settings.enable_score_polling,
         settings.score_poll_interval_minutes,
+        settings.enable_daily_standings_sync,
+        settings.daily_standings_sync_time,
         settings.live_matches_provider,
         bool(settings.live_matches_api_url and settings.live_matches_api_key),
         settings.fallback_scores_provider,
@@ -118,17 +167,26 @@ async def start_score_polling() -> None:
     if settings.enable_score_polling and score_poll_task is None:
         score_poll_task = asyncio.create_task(score_poll_loop())
         logger.info("Background score polling started")
+    if settings.enable_daily_standings_sync and daily_standings_task is None:
+        daily_standings_task = asyncio.create_task(daily_standings_sync_loop())
+        logger.info("Daily group standings sync started")
 
 
 @app.on_event("shutdown")
 async def stop_score_polling() -> None:
-    global score_poll_task
+    global score_poll_task, daily_standings_task
     if score_poll_task is not None:
         score_poll_task.cancel()
         with contextlib.suppress(asyncio.CancelledError):
             await score_poll_task
         score_poll_task = None
         logger.info("Background score polling stopped")
+    if daily_standings_task is not None:
+        daily_standings_task.cancel()
+        with contextlib.suppress(asyncio.CancelledError):
+            await daily_standings_task
+        daily_standings_task = None
+        logger.info("Daily group standings sync stopped")
 
 
 class FixtureResult(BaseModel):
@@ -167,6 +225,16 @@ def fixtures() -> dict[str, Any]:
 def leaderboard() -> dict[str, Any]:
     current = build_state()
     return {"leaderboard": current["leaderboard"], "teams": current["teams"], "lastUpdated": current["lastUpdated"]}
+
+
+@app.get("/api/group-standings")
+def group_standings() -> dict[str, Any]:
+    current = build_state()
+    return {
+        "groupStandings": current["groupStandings"],
+        "lastUpdated": current["lastUpdated"],
+        "provider": current["provider"],
+    }
 
 
 @app.post("/api/live/sync")

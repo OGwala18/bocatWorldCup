@@ -122,6 +122,8 @@ The score poller checks known fixtures from kickoff until `SCORE_POLL_END_MINUTE
 
 When `ENABLE_SCORE_POLLING=true`, the FastAPI backend also runs the same score poller in the background every `SCORE_POLL_INTERVAL_MINUTES` while the backend process is alive.
 
+Group tables are calculated dynamically from finished group fixture scores, sorted by points, goal difference, goals for, then team name. Manual result updates and ESPN syncs both immediately flow into the group tables. The backend also runs a daily group-table refresh at `DAILY_STANDINGS_SYNC_TIME=08:00` SAST while the service is awake; change that env var if you want another morning time.
+
 Qualification points are mapped per player-owned team. If all four of a player's teams reach the Round of 32, that player gets 4 points. The app awards top-two group qualification as soon as an individual group has all six fixtures final, and it also pulls ESPN's explicit `advanced` standings stat so already-qualified teams can be credited before the full group stage is complete.
 
 Useful local tests:
@@ -129,6 +131,7 @@ Useful local tests:
 ```powershell
 python -m backend.app.automation sync-scores --dry-run --now 2026-06-11T21:05:00+02:00
 python -m backend.app.automation sync-postmatch --dry-run --now 2026-06-12T00:30:00+02:00
+python -m backend.app.automation sync-standings
 ```
 
 Manual test updates can be sent to:

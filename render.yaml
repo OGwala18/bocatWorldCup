@@ -26,6 +26,10 @@ services:
         value: 10
       - key: ENABLE_SCORE_POLLING
         value: true
+      - key: DAILY_STANDINGS_SYNC_TIME
+        value: 08:00
+      - key: ENABLE_DAILY_STANDINGS_SYNC
+        value: true
       - key: LIVE_MATCHES_PROVIDER
         value: api-football
       - key: LIVE_MATCHES_API_URL

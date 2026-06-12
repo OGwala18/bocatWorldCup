@@ -58,6 +58,8 @@ class Settings:
     score_poll_end_minutes_after_kickoff = env_int("SCORE_POLL_END_MINUTES_AFTER_KICKOFF", 180)
     score_poll_interval_minutes = env_int("SCORE_POLL_INTERVAL_MINUTES", 10)
     enable_score_polling = env_bool("ENABLE_SCORE_POLLING", True)
+    daily_standings_sync_time = os.getenv("DAILY_STANDINGS_SYNC_TIME", "08:00").strip()
+    enable_daily_standings_sync = env_bool("ENABLE_DAILY_STANDINGS_SYNC", True)
 
 
 settings = Settings()

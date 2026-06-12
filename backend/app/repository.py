@@ -251,10 +251,30 @@ def build_state() -> dict[str, Any]:
     for rank, row in enumerate(leaderboard, start=1):
         row["rank"] = rank
 
+    raw_group_standings = compute_group_standings(group_fixtures)
+    group_standings = {}
+    for group in static["groups"]:
+        group_name = group["group"]
+        rows = []
+        for rank, row in enumerate(raw_group_standings.get(group_name, []), start=1):
+            team = team_lookup[row["team"]]
+            rows.append(
+                {
+                    **row,
+                    "rank": rank,
+                    "group": group_name,
+                    "owner": team["owner"],
+                    "stageReached": team["stageReached"],
+                    "stagePoints": team["points"],
+                }
+            )
+        group_standings[group_name] = rows
+
     return {
         "players": players,
         "teams": enriched_teams,
         "groups": static["groups"],
+        "groupStandings": group_standings,
         "fixtures": group_fixtures,
         "knockoutFixtures": knockout_fixtures,
         "leaderboard": leaderboard,
