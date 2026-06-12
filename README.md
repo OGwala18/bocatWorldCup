@@ -59,6 +59,8 @@ Build command: npm ci && npm run build
 Publish directory: frontend/dist
 ```
 
+This is a Vite app, not a Next.js app. If the Netlify UI has `@netlify/plugin-nextjs` installed, either remove that plugin from the Netlify site settings or keep `NETLIFY_NEXT_PLUGIN_SKIP=true` set so the plugin does not fail the deploy after the Vite build succeeds.
+
 The frontend must know the backend URL. In Netlify, set:
 
 ```text
