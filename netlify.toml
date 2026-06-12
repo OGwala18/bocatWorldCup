@@ -6,6 +6,7 @@
 [build.environment]
   NODE_VERSION = "22"
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  VITE_API_BASE = "https://bocatworldcup.onrender.com"
 
 [[redirects]]
   from = "/api/*"

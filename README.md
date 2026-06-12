@@ -67,7 +67,7 @@ The frontend must know the backend URL. In Netlify, set:
 VITE_API_BASE=https://your-backend-url
 ```
 
-Then redeploy the Netlify site. If `VITE_API_BASE` is missing, the frontend will try to call `/api/state` on the Netlify domain, which will fail because Netlify is not running the FastAPI backend.
+The current `netlify.toml` already sets this to `https://bocatworldcup.onrender.com`. Redeploy the Netlify site after changing it. If `VITE_API_BASE` is missing, the frontend will try to call `/api/state` on the Netlify domain, which will fail because Netlify is not running the FastAPI backend.
 
 If Netlify shows `Unexpected token '<', "<!doctype "... is not valid JSON`, the frontend is receiving Netlify's `index.html` page instead of JSON from the API. Set `VITE_API_BASE` to the deployed backend URL, confirm `/api/state` is being requested from that backend domain in the browser Network tab, and redeploy the Netlify frontend.
 
