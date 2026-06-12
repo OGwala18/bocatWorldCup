@@ -61,7 +61,7 @@ function StandingsTeam({ row }: { row: GroupStandingRow }) {
   return (
     <div className="standings-team">
       <TeamPill team={{ name: row.team, owner: row.owner }} />
-      <span>{row.owner.playerName}</span>
+      <span className="standings-owner">{row.owner.playerName}</span>
     </div>
   );
 }

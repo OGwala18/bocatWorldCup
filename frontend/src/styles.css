@@ -384,7 +384,7 @@ main {
   min-width: 0;
 }
 
-.standings-team > span {
+.standings-owner {
   color: #475569;
   font-size: 12px;
   overflow-wrap: anywhere;
@@ -565,7 +565,7 @@ main {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .standings-team > span {
+  .standings-owner {
     display: none;
   }
 }
