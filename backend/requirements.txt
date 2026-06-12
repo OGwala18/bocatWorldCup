@@ -1,5 +1,7 @@
 fastapi==0.124.2
 uvicorn[standard]==0.38.0
+gunicorn==26.0.0
+a2wsgi==1.10.10
 httpx==0.28.1
 python-dotenv==1.2.1
 pydantic==2.12.5

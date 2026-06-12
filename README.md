@@ -92,7 +92,7 @@ Build command: pip install -r requirements.txt
 Start command: python -m uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
 ```
 
-The root `requirements.txt` points Render to `backend/requirements.txt`, and `.python-version` pins the service to Python 3.12.8.
+The root `requirements.txt` points Render to `backend/requirements.txt`, `.python-version` pins the service to Python 3.12.8, and the root `Procfile` declares the same uvicorn start command. If Render logs `Running 'gunicorn bocatworldcup.wsgi'`, the service is using a stale Django-style start command from the Render UI. The repo includes a compatibility `bocatworldcup.wsgi` fallback, but the preferred fix is still to replace the Render Start Command with the uvicorn command above.
 
 After Render is healthy, set Netlify's frontend API variable to:
 
