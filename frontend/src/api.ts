@@ -76,21 +76,123 @@ export type AppState = {
 };
 
 const API_BASE = (import.meta.env.VITE_API_BASE ?? "").replace(/\/+$/, "");
+const DEBUG_API = import.meta.env.VITE_DEBUG_API !== "false";
+
+function resolveUrl(url: string) {
+  if (typeof window === "undefined") return url;
+  try {
+    return new URL(url, window.location.origin).href;
+  } catch {
+    return url;
+  }
+}
+
+function logApi(level: "info" | "warn" | "error", message: string, meta: Record<string, unknown>) {
+  if (!DEBUG_API) return;
+  console[level](`[Bocat API] ${message}`, meta);
+}
+
+logApi("info", "client config", {
+  mode: import.meta.env.MODE,
+  apiBase: API_BASE || "(empty - using the current website origin)",
+});
+
+if (import.meta.env.PROD && !API_BASE) {
+  logApi("warn", "VITE_API_BASE is empty in production", {
+    problem: "API calls will go to the Netlify frontend domain instead of the FastAPI backend.",
+    fix: "Set VITE_API_BASE in Netlify to the deployed backend URL, then redeploy.",
+  });
+}
+
+async function requestJson<T>(path: string, init?: RequestInit): Promise<T> {
+  const method = init?.method ?? "GET";
+  const requestUrl = `${API_BASE}${path}`;
+  const resolvedRequestUrl = resolveUrl(requestUrl);
+  const startedAt = performance.now();
+
+  logApi("info", "request started", {
+    method,
+    path,
+    url: resolvedRequestUrl,
+  });
+
+  let response: Response;
+  try {
+    response = await fetch(requestUrl, init);
+  } catch (err) {
+    logApi("error", "network request failed", {
+      method,
+      path,
+      url: resolvedRequestUrl,
+      error: err instanceof Error ? err.message : String(err),
+    });
+    throw new Error("Network request failed. Check the backend URL, deployment status, and CORS settings.");
+  }
+
+  const durationMs = Math.round(performance.now() - startedAt);
+  const contentType = response.headers.get("content-type") ?? "";
+  const isJson = contentType.toLowerCase().includes("application/json");
+  const responseMeta = {
+    method,
+    path,
+    url: response.url || resolvedRequestUrl,
+    status: response.status,
+    statusText: response.statusText,
+    contentType: contentType || "(missing)",
+    durationMs,
+  };
+
+  logApi(response.ok ? "info" : "warn", "response received", responseMeta);
+
+  if (!response.ok) {
+    if (isJson) {
+      const error = await response.json().catch(() => ({ detail: `API error ${response.status}` }));
+      logApi("error", "JSON error response", { ...responseMeta, error });
+      throw new Error(error.detail ?? `API error ${response.status}`);
+    }
+
+    const body = await response.text().catch(() => "");
+    logApi("error", "non-JSON error response", {
+      ...responseMeta,
+      returnedHtml: body.trimStart().startsWith("<"),
+      preview: body.slice(0, 180),
+    });
+    throw new Error(
+      `API error ${response.status}. Check that VITE_API_BASE points to the deployed FastAPI backend.`
+    );
+  }
+
+  if (!isJson) {
+    const body = await response.text().catch(() => "");
+    const returnedHtml = body.trimStart().startsWith("<");
+    logApi("error", "non-JSON success response", {
+      ...responseMeta,
+      returnedHtml,
+      preview: body.slice(0, 180),
+    });
+    throw new Error(
+      returnedHtml
+        ? "Backend returned HTML instead of JSON. Set VITE_API_BASE in Netlify to your deployed FastAPI backend URL, then redeploy."
+        : "Backend returned a non-JSON response."
+    );
+  }
+
+  try {
+    return await response.json();
+  } catch (err) {
+    logApi("error", "JSON parse failed", {
+      ...responseMeta,
+      error: err instanceof Error ? err.message : String(err),
+    });
+    throw new Error("Backend returned invalid JSON. Check the API response and backend logs.");
+  }
+}
 
 export async function fetchState(): Promise<AppState> {
-  const response = await fetch(`${API_BASE}/api/state`);
-  if (!response.ok) {
-    throw new Error(`API error ${response.status}`);
-  }
-  return response.json();
+  return requestJson<AppState>("/api/state");
 }
 
 export async function syncLive(): Promise<AppState> {
-  const response = await fetch(`${API_BASE}/api/live/sync`, { method: "POST" });
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: "Live sync failed" }));
-    throw new Error(error.detail ?? "Live sync failed");
-  }
-  const payload = await response.json();
+  const payload = await requestJson<{ state: AppState }>("/api/live/sync", { method: "POST" });
   return payload.state;
 }

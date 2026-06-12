@@ -1,0 +1,3 @@
+{
+  "detail": "API backend is not configured for this Netlify deploy. Set VITE_API_BASE to the deployed FastAPI backend URL and redeploy."
+}

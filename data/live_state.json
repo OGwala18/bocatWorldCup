@@ -1,6 +1,27 @@
 {
-  "lastUpdated": "2026-06-10T20:52:15.999466+02:00",
-  "provider": "automation",
-  "fixtures": [],
+  "lastUpdated": "2026-06-12T06:06:21.707095+02:00",
+  "provider": "espn-scoreboard",
+  "fixtures": [
+    {
+      "id": "m001",
+      "providerFixtureId": "760415",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "finished",
+      "displayClock": "90'+8'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m002",
+      "providerFixtureId": "760414",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+7'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    }
+  ],
   "advancements": {}
 }

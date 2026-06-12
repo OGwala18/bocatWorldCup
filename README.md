@@ -67,6 +67,14 @@ VITE_API_BASE=https://your-backend-url
 
 Then redeploy the Netlify site. If `VITE_API_BASE` is missing, the frontend will try to call `/api/state` on the Netlify domain, which will fail because Netlify is not running the FastAPI backend.
 
+If Netlify shows `Unexpected token '<', "<!doctype "... is not valid JSON`, the frontend is receiving Netlify's `index.html` page instead of JSON from the API. Set `VITE_API_BASE` to the deployed backend URL, confirm `/api/state` is being requested from that backend domain in the browser Network tab, and redeploy the Netlify frontend.
+
+The frontend logs API diagnostics to the browser console with the `[Bocat API]` and `[Bocat App]` prefixes. To reduce browser logging later, set this in Netlify:
+
+```text
+VITE_DEBUG_API=false
+```
+
 Render is configured by `render.yaml`. After the backend is deployed, update these environment values in Render:
 
 ```text

@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import asyncio
 import contextlib
+import logging
+import time
 from typing import Any
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -14,6 +16,12 @@ from .post_match import fetch_postmatch_updates, fetch_score_updates
 from .qualification import fetch_qualification_updates
 from .repository import build_state, upsert_live_fixtures, update_advancements
 
+
+logging.basicConfig(
+    level=getattr(logging, settings.log_level, logging.INFO),
+    format="%(asctime)s %(levelname)s [%(name)s] %(message)s",
+)
+logger = logging.getLogger("bocat.api")
 
 app = FastAPI(title=settings.app_name)
 app.add_middleware(
@@ -25,6 +33,33 @@ app.add_middleware(
 )
 
 score_poll_task: asyncio.Task[None] | None = None
+
+
+@app.middleware("http")
+async def log_api_requests(request: Request, call_next):
+    started_at = time.perf_counter()
+    try:
+        response = await call_next(request)
+    except Exception:
+        logger.exception(
+            "Request failed method=%s path=%s origin=%s",
+            request.method,
+            request.url.path,
+            request.headers.get("origin", "-"),
+        )
+        raise
+
+    if request.url.path.startswith("/api"):
+        duration_ms = round((time.perf_counter() - started_at) * 1000)
+        logger.info(
+            "Request complete method=%s path=%s status=%s duration_ms=%s origin=%s",
+            request.method,
+            request.url.path,
+            response.status_code,
+            duration_ms,
+            request.headers.get("origin", "-"),
+        )
+    return response
 
 
 async def run_scoreboard_poll() -> dict[str, Any]:
@@ -43,6 +78,17 @@ async def run_scoreboard_poll() -> dict[str, Any]:
         update_advancements(advancements, provider=qualification_result["source"])
     result["qualifiedTeams"] = len(advancements)
     result["qualificationError"] = qualification_error
+    logger.info(
+        "Score poll complete source=%s updated=%s eligible=%s checked_dates=%s live=%s final=%s qualified=%s qualification_error=%s",
+        result.get("source"),
+        result.get("updatedFixtures"),
+        result.get("eligibleFixtures"),
+        len(result.get("checkedDates", [])),
+        result.get("liveFixtures"),
+        result.get("finalFixtures"),
+        result["qualifiedTeams"],
+        qualification_error or "-",
+    )
     return result
 
 
@@ -51,15 +97,27 @@ async def score_poll_loop() -> None:
         try:
             await run_scoreboard_poll()
         except Exception as exc:
-            print(f"Score poll failed: {exc}")
+            logger.exception("Score poll failed: %s", exc)
         await asyncio.sleep(max(settings.score_poll_interval_minutes, 1) * 60)
 
 
 @app.on_event("startup")
 async def start_score_polling() -> None:
     global score_poll_task
+    logger.info(
+        "Starting Bocat API timezone=%s cors_origins=%s score_polling=%s poll_interval_minutes=%s live_provider=%s live_api_configured=%s fallback_provider=%s state_path=%s",
+        settings.timezone,
+        settings.cors_origins,
+        settings.enable_score_polling,
+        settings.score_poll_interval_minutes,
+        settings.live_matches_provider,
+        bool(settings.live_matches_api_url and settings.live_matches_api_key),
+        settings.fallback_scores_provider,
+        settings.live_state_path,
+    )
     if settings.enable_score_polling and score_poll_task is None:
         score_poll_task = asyncio.create_task(score_poll_loop())
+        logger.info("Background score polling started")
 
 
 @app.on_event("shutdown")
@@ -70,6 +128,7 @@ async def stop_score_polling() -> None:
         with contextlib.suppress(asyncio.CancelledError):
             await score_poll_task
         score_poll_task = None
+        logger.info("Background score polling stopped")
 
 
 class FixtureResult(BaseModel):
@@ -112,9 +171,15 @@ def leaderboard() -> dict[str, Any]:
 
 @app.post("/api/live/sync")
 async def sync_live() -> dict[str, Any]:
+    logger.info(
+        "Manual live sync requested provider=%s live_api_configured=%s",
+        settings.live_matches_provider,
+        bool(settings.live_matches_api_url and settings.live_matches_api_key),
+    )
     try:
         updates = await fetch_live_updates()
     except (LiveApiNotConfigured, LiveApiProviderError) as exc:
+        logger.warning("Live API unavailable, using scoreboard fallback: %s", exc)
         return await sync_scoreboard_fallback(str(exc))
     upsert_live_fixtures(updates, provider=settings.live_matches_provider)
     qualification_error = None
@@ -125,6 +190,12 @@ async def sync_live() -> dict[str, Any]:
         qualification_error = str(exc)
     if qualification_result["advancements"]:
         update_advancements(qualification_result["advancements"], provider=qualification_result["source"])
+    logger.info(
+        "Manual live sync complete mode=live updated=%s qualified=%s qualification_error=%s",
+        len(updates),
+        len(qualification_result["advancements"]),
+        qualification_error or "-",
+    )
     return {
         "mode": "live",
         "updatedFixtures": len(updates),
@@ -139,8 +210,21 @@ async def sync_scoreboard_fallback(live_error: str | None = None) -> dict[str, A
         result = await run_scoreboard_poll()
     except LiveApiProviderError as exc:
         detail = f"{live_error}; ESPN scoreboard fallback failed: {exc}" if live_error else str(exc)
+        logger.exception("Scoreboard fallback failed: %s", detail)
         raise HTTPException(status_code=502, detail=detail) from exc
 
+    logger.info(
+        "Scoreboard fallback complete mode=%s updated=%s eligible=%s checked_dates=%s live=%s final=%s qualified=%s live_error=%s qualification_error=%s",
+        "scoreboard-fallback" if live_error else "scoreboard",
+        result["updatedFixtures"],
+        result["eligibleFixtures"],
+        len(result["checkedDates"]),
+        result["liveFixtures"],
+        result["finalFixtures"],
+        result["qualifiedTeams"],
+        live_error or "-",
+        result["qualificationError"] or "-",
+    )
     return {
         "mode": "scoreboard-fallback" if live_error else "scoreboard",
         "liveError": live_error,
@@ -165,12 +249,20 @@ async def sync_postmatch() -> dict[str, Any]:
     try:
         result = await fetch_postmatch_updates()
     except LiveApiProviderError as exc:
+        logger.exception("Postmatch sync failed: %s", exc)
         raise HTTPException(status_code=502, detail=str(exc)) from exc
 
     updates = result["updates"]
     if updates:
         upsert_live_fixtures(updates, provider=result["source"])
 
+    logger.info(
+        "Postmatch sync complete source=%s updated=%s eligible=%s checked_dates=%s",
+        result["source"],
+        len(updates),
+        result["eligibleFixtures"],
+        len(result["checkedDates"]),
+    )
     return {
         "mode": "postmatch",
         "updatedFixtures": len(updates),
@@ -184,10 +276,12 @@ async def sync_postmatch() -> dict[str, Any]:
 def record_results(results: list[FixtureResult]) -> dict[str, Any]:
     updates = [result.model_dump(exclude_none=True) for result in results]
     upsert_live_fixtures(updates, provider="manual")
+    logger.info("Manual fixture results recorded count=%s", len(updates))
     return {"updatedFixtures": len(updates), "state": build_state()}
 
 
 @app.post("/api/admin/advancements")
 def record_advancements(updates: list[AdvancementUpdate]) -> dict[str, Any]:
     update_advancements({row.team: row.stageReached for row in updates}, provider="manual")
+    logger.info("Manual advancement updates recorded count=%s", len(updates))
     return {"updatedTeams": len(updates), "state": build_state()}

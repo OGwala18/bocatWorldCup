@@ -74,8 +74,18 @@ function App() {
   async function load() {
     setError(null);
     try {
-      setState(await fetchState());
+      const nextState = await fetchState();
+      console.info("[Bocat App] state loaded", {
+        players: nextState.players.length,
+        assignedTeams: nextState.teams.length,
+        groupFixtures: nextState.fixtures.length,
+        knockoutFixtures: nextState.knockoutFixtures.length,
+        provider: nextState.provider ?? "not connected",
+        lastUpdated: nextState.lastUpdated,
+      });
+      setState(nextState);
     } catch (err) {
+      console.error("[Bocat App] failed to load dashboard state", err);
       setError(err instanceof Error ? err.message : "Failed to load dashboard");
     } finally {
       setLoading(false);
@@ -86,8 +96,15 @@ function App() {
     setSyncing(true);
     setError(null);
     try {
-      setState(await syncLive());
+      console.info("[Bocat App] manual live sync started");
+      const nextState = await syncLive();
+      console.info("[Bocat App] manual live sync completed", {
+        provider: nextState.provider ?? "not connected",
+        lastUpdated: nextState.lastUpdated,
+      });
+      setState(nextState);
     } catch (err) {
+      console.error("[Bocat App] manual live sync failed", err);
       setError(err instanceof Error ? err.message : "Live sync failed");
     } finally {
       setSyncing(false);
