@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-15T06:00:11.485159+02:00",
+  "lastUpdated": "2026-06-16T11:07:46.947958+02:00",
   "provider": "espn-scoreboard",
   "fixtures": [
     {
@@ -119,6 +119,46 @@
       "awayScore": 5,
       "status": "finished",
       "displayClock": "90'+6'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m013",
+      "providerFixtureId": "760428",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+5'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m014",
+      "providerFixtureId": "760426",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+5'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m015",
+      "providerFixtureId": "760429",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+8'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m016",
+      "providerFixtureId": "760427",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "finished",
+      "displayClock": "90'+5'",
       "statusDetail": "FT",
       "statusState": "post"
     }
