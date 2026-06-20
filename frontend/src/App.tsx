@@ -3,6 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import heroUrl from "./assets/bocat-hero.png";
 import { AppState, Fixture, GroupStandingRow, Team, fetchState, syncLive } from "./api";
 
+const MATCH_PAGE_SIZE = 4;
+
 function textColor(hex: string) {
   const raw = hex.replace("#", "");
   const r = parseInt(raw.slice(0, 2), 16);
@@ -57,6 +59,20 @@ function StatusPill({ fixture }: { fixture: Fixture }) {
   return <span className={`status-pill ${meta.tone}`}>{meta.label}</span>;
 }
 
+function fixtureKickoffMs(fixture: Fixture) {
+  return new Date(fixture.kickoffSast).getTime();
+}
+
+function isFinalFixture(fixture: Fixture) {
+  const status = fixture.status.toLowerCase();
+  return status === "finished" || status === "final" || status === "ft";
+}
+
+function isLiveFixture(fixture: Fixture) {
+  const status = fixture.status.toLowerCase();
+  return status === "live" || status === "halftime";
+}
+
 function StandingsTeam({ row }: { row: GroupStandingRow }) {
   return (
     <div className="standings-team">
@@ -71,10 +87,13 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [syncing, setSyncing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [fixtureFilter, setFixtureFilter] = useState("today");
+  const [matchView, setMatchView] = useState<"fixtures" | "results">("fixtures");
+  const [matchPage, setMatchPage] = useState(0);
+  const [nowMs, setNowMs] = useState(() => Date.now());
 
   async function load() {
     setError(null);
+    setNowMs(Date.now());
     try {
       const nextState = await fetchState();
       console.info("[Bocat App] state loaded", {
@@ -120,6 +139,10 @@ function App() {
     return () => window.clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    setMatchPage(0);
+  }, [matchView]);
+
   const teamByName = useMemo(() => {
     return new Map(state?.teams.map((team) => [team.name, team]) ?? []);
   }, [state]);
@@ -157,13 +180,26 @@ function App() {
     });
   }, [state, teamByName]);
 
-  const visibleFixtures = useMemo(() => {
+  const sortedMatches = useMemo(() => {
     if (!state) return [];
     const all = [...state.fixtures, ...state.knockoutFixtures];
-    if (fixtureFilter === "group") return state.fixtures;
-    if (fixtureFilter === "knockout") return state.knockoutFixtures;
-    return all.slice(0, 18);
-  }, [state, fixtureFilter]);
+    if (matchView === "results") {
+      return all
+        .filter((fixture) => isFinalFixture(fixture))
+        .sort((a, b) => fixtureKickoffMs(b) - fixtureKickoffMs(a));
+    }
+
+    return all
+      .filter((fixture) => !isFinalFixture(fixture) && (isLiveFixture(fixture) || fixtureKickoffMs(fixture) >= nowMs))
+      .sort((a, b) => fixtureKickoffMs(a) - fixtureKickoffMs(b));
+  }, [state, matchView, nowMs]);
+
+  const totalMatchPages = Math.max(1, Math.ceil(sortedMatches.length / MATCH_PAGE_SIZE));
+  const activeMatchPage = Math.min(matchPage, totalMatchPages - 1);
+  const visibleMatches = sortedMatches.slice(
+    activeMatchPage * MATCH_PAGE_SIZE,
+    activeMatchPage * MATCH_PAGE_SIZE + MATCH_PAGE_SIZE
+  );
 
   if (loading) {
     return <main className="loading">Loading Bocat...</main>;
@@ -244,26 +280,30 @@ function App() {
         <div className="panel fixtures">
           <div className="panel-title">
             <CalendarClock size={19} />
-            <h2>Fixtures</h2>
+            <h2>Fixtures & Results</h2>
           </div>
           <div className="segmented" role="tablist" aria-label="Fixture filter">
             {[
-              ["today", "First 18"],
-              ["group", "Groups"],
-              ["knockout", "Knockouts"],
+              ["fixtures", "Fixtures"],
+              ["results", "Results"],
             ].map(([value, label]) => (
               <button
                 key={value}
                 type="button"
-                className={fixtureFilter === value ? "active" : ""}
-                onClick={() => setFixtureFilter(value)}
+                className={matchView === value ? "active" : ""}
+                onClick={() => setMatchView(value as "fixtures" | "results")}
               >
                 {label}
               </button>
             ))}
           </div>
           <div className="fixture-list">
-            {visibleFixtures.map((fixture) => (
+            {visibleMatches.length === 0 && (
+              <div className="fixture-empty">
+                {matchView === "fixtures" ? "No upcoming fixtures found." : "No finished results found yet."}
+              </div>
+            )}
+            {visibleMatches.map((fixture) => (
               <article className="fixture-row" key={fixture.id}>
                 <time>
                   {fixture.dateSast}
@@ -281,6 +321,21 @@ function App() {
                 <span className="fixture-stage">{fixture.group ? `Group ${fixture.group}` : fixture.stage}</span>
               </article>
             ))}
+          </div>
+          <div className="pagination" aria-label={`${matchView} pagination`}>
+            <button type="button" onClick={() => setMatchPage((page) => Math.max(page - 1, 0))} disabled={activeMatchPage === 0}>
+              Prev
+            </button>
+            <span>
+              Page {activeMatchPage + 1} of {totalMatchPages}
+            </span>
+            <button
+              type="button"
+              onClick={() => setMatchPage((page) => Math.min(page + 1, totalMatchPages - 1))}
+              disabled={activeMatchPage >= totalMatchPages - 1}
+            >
+              Next
+            </button>
           </div>
         </div>
       </section>
