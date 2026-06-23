@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-06-16T11:07:46.947958+02:00",
-  "provider": "espn-scoreboard",
+  "lastUpdated": "2026-06-23T09:26:26.209907+02:00",
+  "provider": "espn-standings",
   "fixtures": [
     {
       "id": "m001",
@@ -161,7 +161,284 @@
       "displayClock": "90'+5'",
       "statusDetail": "FT",
       "statusState": "post"
+    },
+    {
+      "id": "m017",
+      "providerFixtureId": "760432",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+10'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m018",
+      "providerFixtureId": "760430",
+      "homeScore": 1,
+      "awayScore": 4,
+      "status": "finished",
+      "displayClock": "90'+8'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m019",
+      "providerFixtureId": "760433",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+6'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m020",
+      "providerFixtureId": "760431",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+14'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m021",
+      "providerFixtureId": "760435",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+5'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m022",
+      "providerFixtureId": "760437",
+      "homeScore": 4,
+      "awayScore": 2,
+      "status": "finished",
+      "displayClock": "90'+7'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m023",
+      "providerFixtureId": "760434",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+11'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m024",
+      "providerFixtureId": "760436",
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "finished",
+      "displayClock": "90'+11'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m025",
+      "providerFixtureId": "760438",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+7'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m026",
+      "providerFixtureId": "760439",
+      "homeScore": 4,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+8'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m027",
+      "providerFixtureId": "760440",
+      "homeScore": 6,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+10'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m028",
+      "providerFixtureId": "760441",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+6'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m029",
+      "providerFixtureId": "760442",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+8'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m030",
+      "providerFixtureId": "760445",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+7'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m031",
+      "providerFixtureId": "760444",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+5'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m033",
+      "providerFixtureId": "760447",
+      "homeScore": 5,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+5'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m034",
+      "providerFixtureId": "760448",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "finished",
+      "displayClock": "90'+7'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m035",
+      "providerFixtureId": "760446",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+6'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m036",
+      "providerFixtureId": "760449",
+      "homeScore": 0,
+      "awayScore": 4,
+      "status": "finished",
+      "displayClock": "90'+7'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m037",
+      "providerFixtureId": "760453",
+      "homeScore": 4,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+8'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m038",
+      "providerFixtureId": "760451",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+5'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m039",
+      "providerFixtureId": "760450",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "finished",
+      "displayClock": "90'+8'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m040",
+      "providerFixtureId": "760452",
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "finished",
+      "displayClock": "90'+10'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m041",
+      "providerFixtureId": "760456",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+8'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m042",
+      "providerFixtureId": "760457",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "finished",
+      "displayClock": "90'+2'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m043",
+      "providerFixtureId": "760454",
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "finished",
+      "displayClock": "90'+10'",
+      "statusDetail": "FT",
+      "statusState": "post"
+    },
+    {
+      "id": "m044",
+      "providerFixtureId": "760455",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "finished",
+      "displayClock": "90'+8'",
+      "statusDetail": "FT",
+      "statusState": "post"
     }
   ],
-  "advancements": {}
+  "advancements": {
+    "Mexico": "round_of_32",
+    "United States": "round_of_32",
+    "Germany": "round_of_32",
+    "Argentina": "round_of_32",
+    "Norway": "round_of_32",
+    "France": "round_of_32"
+  }
 }
