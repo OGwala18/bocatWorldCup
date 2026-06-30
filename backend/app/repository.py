@@ -110,6 +110,18 @@ def merge_live_fixture(base: dict[str, Any], live_by_id: dict[str, dict[str, Any
     return merged
 
 
+def enrich_fixture_owners(fixture: dict[str, Any], owners: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    home_owner = owners.get(fixture["homeTeam"])
+    away_owner = owners.get(fixture["awayTeam"])
+    matchup = f"{home_owner['playerName']} vs {away_owner['playerName']}" if home_owner and away_owner else "TBD"
+    return {
+        **fixture,
+        "homeOwner": home_owner,
+        "awayOwner": away_owner,
+        "playerMatchup": matchup,
+    }
+
+
 def merged_fixtures() -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
     state = load_static()
     live_state = state["liveState"]
@@ -208,6 +220,7 @@ def build_state() -> dict[str, Any]:
     static = load_static()
     players = static["players"]
     teams = static["teams"]
+    owners = team_owner_map(players)
     group_fixtures, knockout_fixtures, live_state = merged_fixtures()
     computed_advancements = automatic_advancements(group_fixtures, knockout_fixtures)
     manual_advancements = live_state.get("advancements", {})
@@ -275,8 +288,8 @@ def build_state() -> dict[str, Any]:
         "teams": enriched_teams,
         "groups": static["groups"],
         "groupStandings": group_standings,
-        "fixtures": group_fixtures,
-        "knockoutFixtures": knockout_fixtures,
+        "fixtures": [enrich_fixture_owners(fixture, owners) for fixture in group_fixtures],
+        "knockoutFixtures": [enrich_fixture_owners(fixture, owners) for fixture in knockout_fixtures],
         "leaderboard": leaderboard,
         "scoring": static["scoring"],
         "lastUpdated": live_state.get("lastUpdated"),

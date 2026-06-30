@@ -5,7 +5,7 @@ from typing import Any
 import httpx
 
 from .config import settings
-from .repository import load_static
+from .repository import load_live_state, load_static
 
 
 class LiveApiNotConfigured(RuntimeError):
@@ -38,16 +38,31 @@ def normalize_team_name(name: str) -> str:
     return aliases.get(normalized, normalized)
 
 
-def fixture_index() -> dict[tuple[str, str], tuple[dict[str, Any], bool]]:
+PLACEHOLDER_TOKENS = ("TBD", "Best Third-Place", "Group ", "Second-Place", "Winner", "Match ")
+
+
+def has_placeholder_team(fixture: dict[str, Any]) -> bool:
+    teams = (fixture.get("homeTeam"), fixture.get("awayTeam"))
+    return any(isinstance(team, str) and any(token in team for token in PLACEHOLDER_TOKENS) for team in teams)
+
+
+def fixture_indexes() -> tuple[dict[tuple[str, str], tuple[dict[str, Any], bool]], dict[str, dict[str, Any]]]:
     static = load_static()
+    live_state = load_live_state()
+    live_by_id = {fixture["id"]: fixture for fixture in live_state.get("fixtures", [])}
     fixtures = static["fixtures"] + static["knockoutFixtures"]
-    index = {}
+    pair_index = {}
+    provider_index = {}
     for fixture in fixtures:
-        home = normalize_team_name(fixture["homeTeam"])
-        away = normalize_team_name(fixture["awayTeam"])
-        index[(home, away)] = (fixture, False)
-        index[(away, home)] = (fixture, True)
-    return index
+        merged = {**fixture, **live_by_id.get(fixture["id"], {})}
+        provider_id = str(merged.get("providerFixtureId") or "")
+        if provider_id:
+            provider_index[provider_id] = merged
+        home = normalize_team_name(merged["homeTeam"])
+        away = normalize_team_name(merged["awayTeam"])
+        pair_index[(home, away)] = (merged, False)
+        pair_index[(away, home)] = (merged, True)
+    return pair_index, provider_index
 
 
 def read_score(payload: dict[str, Any], *paths: tuple[str, ...]) -> Any:
@@ -73,7 +88,7 @@ def normalize_generic_payload(payload: Any) -> list[dict[str, Any]]:
         rows = payload
 
     updates = []
-    index = fixture_index()
+    pair_index, provider_index = fixture_indexes()
     for row in rows:
         home = normalize_team_name(
             read_score(row, ("homeTeam",), ("home", "name"), ("teams", "home", "name")) or ""
@@ -81,19 +96,25 @@ def normalize_generic_payload(payload: Any) -> list[dict[str, Any]]:
         away = normalize_team_name(
             read_score(row, ("awayTeam",), ("away", "name"), ("teams", "away", "name")) or ""
         )
-        if not home or not away:
+        provider_id = read_score(row, ("fixture", "id"), ("id",))
+        provider_key = str(provider_id or "")
+        fixture = provider_index.get(provider_key)
+        swap_scores = False
+        if not fixture:
+            if not home or not away:
+                continue
+            match = pair_index.get((home, away))
+            if not match:
+                continue
+            fixture, swap_scores = match
+        if not fixture:
             continue
-        match = index.get((home, away))
-        if not match:
-            continue
-        fixture, swap_scores = match
 
         home_score = read_score(row, ("homeScore",), ("score", "fulltime", "home"), ("goals", "home"))
         away_score = read_score(row, ("awayScore",), ("score", "fulltime", "away"), ("goals", "away"))
         if swap_scores:
             home_score, away_score = away_score, home_score
         status = read_score(row, ("status",), ("fixture", "status", "short"), ("fixture", "status", "long"))
-        provider_id = read_score(row, ("fixture", "id"), ("id",))
         update = {
             "id": fixture["id"],
             "providerFixtureId": provider_id,
@@ -101,6 +122,9 @@ def normalize_generic_payload(payload: Any) -> list[dict[str, Any]]:
             "awayScore": away_score,
             "status": status or fixture["status"],
         }
+        if provider_key and has_placeholder_team(fixture) and home and away:
+            update["homeTeam"] = home
+            update["awayTeam"] = away
         for field in ("displayClock", "statusDetail", "statusState"):
             value = row.get(field)
             if value is not None:
